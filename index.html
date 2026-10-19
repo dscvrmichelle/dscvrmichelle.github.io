@@ -14,90 +14,85 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
 
-  <header class="site-header">
-    <a href="#home" class="logo">michelle.</a>
+  <div class="page-wrapper">
 
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#works">Works</a>
-      <a href="#about">About</a>
-    </nav>
-  </header>
+    <!-- NAVIGATION -->
+    <header class="site-header">
+      <a href="#top" class="logo">DSCVRMI</a>
 
-  <main>
+      <nav aria-label="Main navigation">
+        <a href="#works">works</a>
+        <a href="#about">about</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </header>
 
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <span class="handwritten">a little collection of everything</span>
+    <main>
 
-        <h1>Hi, I'm Michelle!</h1>
+      <!-- HERO -->
+      <section class="hero">
+        <h1>Hi there :)</h1>
+      </section>
 
-        <p>
-          Welcome to my little corner of the internet,
-          where I collect things I've made, imagined,
-          and explored along the way.
-        </p>
+      <!-- SELECTED WORKS -->
+      <section id="works" class="works-section">
+        <h2>selected works</h2>
 
-        <a href="#works" class="button">Explore my works ↗</a>
-      </div>
+        <div class="works-grid">
 
-      <div class="hero-decoration" aria-hidden="true">
-        <div class="paper-note">
-          <span>made with curiosity ✳</span>
+          <a href="venus.html" class="project-card">
+            <div class="project-image"></div>
+            <span class="project-type">publication / 2026</span>
+            <h3>Venus</h3>
+            <p>A collection of poetry and visual storytelling.</p>
+          </a>
+
+          <a href="#" class="project-card">
+            <div class="project-image"></div>
+            <span class="project-type">publication / 2026</span>
+            <h3>Zine 02</h3>
+            <p>A little creative exploration.</p>
+          </a>
+
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="works" class="works-section">
-      <div class="section-heading">
-        <span class="handwritten">some things I've made</span>
-        <h2>Selected Works</h2>
-      </div>
+      <!-- ABOUT -->
+      <section id="about" class="about-section">
+        <h2>about me</h2>
 
-      <div class="works-grid">
+        <div class="about-content">
+          <div class="about-image"></div>
 
-        <article class="project-card">
-          <div class="project-image">Project image</div>
-          <span class="project-type">Editorial / Zine</span>
-          <h3>Venus</h3>
-          <p>A collection of poems and visual explorations.</p>
-        </article>
+          <div class="about-text">
+            <p>hello again</p>
+            <p>I'm the person behind DSCVRMI.</p>
+          </div>
+        </div>
+      </section>
 
-        <article class="project-card">
-          <div class="project-image">Project image</div>
-          <span class="project-type">Game Design</span>
-          <h3>Board Game Concept</h3>
-          <p>An experiment in storytelling and play.</p>
-        </article>
+      <!-- CONTACT -->
+      <section id="contact" class="contact-section">
+        <h2>contact</h2>
+        <p class="contact-heading">let's make something together?</p>
 
-        <article class="project-card">
-          <div class="project-image">Project image</div>
-          <span class="project-type">Creative Experiment</span>
-          <h3>Coming Soon</h3>
-          <p>More little things are on their way.</p>
-        </article>
+        <div class="contact-links">
+          <a href="mailto:hello@example.com">email</a>
+          <a href="#" aria-label="Instagram">instagram</a>
+        </div>
+      </section>
 
-      </div>
-    </section>
+    </main>
 
-    <section id="about" class="about-section">
-      <span class="handwritten">the person behind the pages</span>
-      <h2>A little about me</h2>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <span>© 2026 DSCVRMI</span>
+      <a href="#top">↑ BACK TO THE TOP</a>
+    </footer>
 
-      <p>
-        I'm Michelle, and this is an ever-growing archive
-        of my creative interests, ideas, and experiments.
-      </p>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2026 Michelle. Made with curiosity.</p>
-  </footer>
+  </div>
 
 </body>
 </html>
-
