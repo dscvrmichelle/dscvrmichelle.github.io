@@ -167,21 +167,34 @@ h2 {
 }
 
 
+
 /* HOMEPAGE — VIEW ALL WORKS */
 
 .view-all-works {
-  margin-top: 35px;
+  width: 100%;
+  margin-top: 55px;
   text-align: right;
 }
 
 .view-all-works a {
+  display: inline-block;
   color: var(--green);
   font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
 .view-all-works a:hover {
-  text-decoration: underline;
+  transform: translateX(5px);
 }
+
+@media (max-width: 600px) {
+  .view-all-works {
+    margin-top: 35px;
+  }
+}
+
 
 
 
