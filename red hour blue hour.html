@@ -1,24 +1,382 @@
-<section class="filter-demo-section">
-  <h2>behind the colours</h2>
 
-  <p class="filter-intro">
-    Red Hour Blue Hour was designed to be experienced through coloured filters.
-    This digital demo uses <em>New Arrival</em> to approximate how different
-    colour filters change what becomes more visible.
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="filter-controls" role="group" aria-label="Colour filter demo">
-    <button class="filter-button is-active" data-filter="original">original</button>
-    <button class="filter-button" data-filter="red">red filter</button>
-    <button class="filter-button" data-filter="blue">blue filter</button>
+  <title>Red Hour Blue Hour — DSCVRMI</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+  <!-- EXISTING WEBSITE CSS -->
+  <link rel="stylesheet" href="style.css?v=7">
+
+  <!-- CSS SPECIFIC TO THIS PROJECT -->
+  <style>
+    .filter-section {
+      margin-top: 55px;
+    }
+
+    .filter-intro {
+      max-width: 850px;
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .filter-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .filter-button {
+      border: 1px solid var(--green);
+      background: transparent;
+      color: var(--green);
+      padding: 12px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .filter-button:hover {
+      background: var(--paper-dark);
+    }
+
+    .filter-button.is-active {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .filter-demo-frame {
+      background: var(--paper-dark);
+      padding: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .filter-demo-frame canvas {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 700px;
+      height: auto;
+      background: var(--white);
+    }
+
+    .filter-note {
+      font-size: 12px;
+      line-height: 1.7;
+      margin-top: 14px;
+      color: var(--ink);
+      max-width: 750px;
+    }
+
+    .process-section {
+      margin-top: 55px;
+    }
+
+    .process-section p {
+      max-width: 850px;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 600px) {
+      .filter-demo-frame {
+        padding: 10px;
+      }
+
+      .filter-button {
+        padding: 10px 13px;
+        font-size: 12px;
+      }
+
+      .filter-demo-frame canvas {
+        max-height: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="index.html" class="logo">DSCVRMI</a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html#works">works</a>
+        <a href="index.html#about">about</a>
+        <a href="index.html#contact">contact</a>
+      </nav>
+    </header>
+
+    <main class="project-detail">
+
+      <!-- PROJECT HEADER -->
+      <a href="index.html#works" class="back-link">
+        ← back to works
+      </a>
+
+      <h1 class="project-title">Red Hour Blue Hour</h1>
+
+      <p class="project-meta">
+        publication / experimental zine / 2024
+      </p>
+
+      <!-- FLIPBOOK -->
+      <div class="flipbook-frame">
+        <iframe
+          src="https://heyzine.com/flip-book/fce911a8ab.html"
+          title="Red Hour Blue Hour — Interactive Zine"
+          allow="autoplay; fullscreen; clipboard-write"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <!-- ABOUT THE PROJECT -->
+      <section class="project-description">
+
+        <h2>about the project</h2>
+
+        <p>
+          Red Hour Blue Hour is an experimental A5 zine
+          inspired by fragments of my life in Germany.
+          Through a series of personal and philosophical
+          reflections, I explored how individual experiences
+          could be translated into illustrations, typography,
+          and overlapping colours.
+        </p>
+
+        <p>
+          The zine was designed around an anaglyph-inspired
+          visual concept. Using transparent red and blue
+          filters, readers can reveal different layers
+          of each composition.
+        </p>
+
+        <p>
+          Getting the colours to work took quite a bit of
+          trial and error, including multiple print tests
+          and experiments with colour combinations.
+          All illustrations were created in Procreate,
+          with the publication assembled in Adobe InDesign.
+        </p>
+
+        <p>
+          What started as an experiment with colour
+          eventually became a rather personal collection
+          of stories, hidden in plain sight.
+        </p>
+
+      </section>
+
+      <!-- INTERACTIVE COLOUR EXPERIMENT -->
+      <section class="filter-section">
+
+        <h2>behind the colours</h2>
+
+        <p class="filter-intro">
+          The original zine was meant to be experienced
+          through transparent coloured filters.
+          Try switching between red and blue to explore
+          how different parts of the same illustration
+          become more or less visible.
+        </p>
+
+        <div
+          class="filter-controls"
+          role="group"
+          aria-label="Colour filter selection">
+
+          <button
+            type="button"
+            class="filter-button is-active"
+            data-filter="original"
+            aria-pressed="true">
+            original
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="red"
+            aria-pressed="false">
+            red filter
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="blue"
+            aria-pressed="false">
+            blue filter
+          </button>
+
+        </div>
+
+        <div class="filter-demo-frame">
+          <canvas
+            id="newArrivalCanvas"
+            role="img"
+            aria-label="New Arrival illustration with selectable digital colour filters">
+          </canvas>
+        </div>
+
+        <p id="filterStatus" class="filter-note" aria-live="polite">
+          Original illustration — New Arrival.
+        </p>
+
+        <p class="filter-note">
+          This is a digital approximation of the physical
+          colour-filter effect. Results may differ from
+          viewing the printed zine through transparent film.
+        </p>
+
+      </section>
+
+      <!-- CREATIVE PROCESS -->
+      <section class="process-section">
+
+        <h2>from sketch to print</h2>
+
+        <p>
+          The project began with a storyboard connecting
+          personal experiences to visual concepts.
+          I developed the illustrations around two
+          overlapping colour layers, then experimented
+          with their reproduction in print.
+        </p>
+
+        <p>
+          Two rounds of printing tests, each featuring
+          ten different red and cyan combinations, helped
+          me understand how colour behaves differently
+          on screen and on paper.
+        </p>
+
+      </section>
+
+      <!-- PROJECT NAVIGATION -->
+      <div class="project-navigation">
+        <a href="index.html#works">← all works</a>
+        <a href="namamu-pada-semesta.html">
+          next project →
+        </a>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <span>© 2026 DSCVRMI</span>
+      <a href="#top">↑ BACK TO THE TOP</a>
+    </footer>
+
   </div>
 
-  <div class="filter-demo-frame">
-    <canvas id="newArrivalCanvas"></canvas>
-  </div>
+  <!-- INTERACTIVE COLOUR FILTER SCRIPT -->
+  <script>
+    const canvas = document.getElementById('newArrivalCanvas');
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
 
-  <p class="filter-note">
-    This is a digital interpretation of the physical red/blue filter effect,
-    not an exact simulation of the printed version.
-  </p>
-</section>
+    const buttons = document.querySelectorAll('.filter-button');
+    const status = document.getElementById('filterStatus');
+
+    const sourceImage = new Image();
+    sourceImage.src = 'New_Arrival.png';
+
+    let originalPixels = null;
+
+    sourceImage.onload = function () {
+      canvas.width = sourceImage.naturalWidth;
+      canvas.height = sourceImage.naturalHeight;
+
+      ctx.drawImage(sourceImage, 0, 0);
+
+      originalPixels = ctx.getImageData(
+        0, 0, canvas.width, canvas.height
+      );
+    };
+
+    sourceImage.onerror = function () {
+      status.textContent =
+        'Image could not be loaded. Check New_Arrival.png.';
+    };
+
+    function applyFilter(mode) {
+      if (!originalPixels) return;
+
+      if (mode === 'original') {
+        ctx.putImageData(originalPixels, 0, 0);
+        status.textContent = 'Original illustration — New Arrival.';
+        return;
+      }
+
+      const result = new ImageData(
+        new Uint8ClampedArray(originalPixels.data),
+        canvas.width,
+        canvas.height
+      );
+
+      const data = result.data;
+
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+
+        if (mode === 'red') {
+          // Approximate light transmitted by a red filter.
+          const light = r;
+          data[i] = light;
+          data[i + 1] = light * 0.20;
+          data[i + 2] = light * 0.16;
+        }
+
+        if (mode === 'blue') {
+          // Approximate light transmitted by a blue-cyan filter.
+          const light = 0.65 * g + 0.35 * b;
+          data[i] = light * 0.12;
+          data[i + 1] = light * 0.65;
+          data[i + 2] = light;
+        }
+      }
+
+      ctx.putImageData(result, 0, 0);
+
+      status.textContent = mode === 'red'
+        ? 'Red filter — warmer colours become lighter.'
+        : 'Blue filter — cooler colours become lighter.';
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        buttons.forEach(btn => {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-pressed', 'false');
+        });
+
+        this.classList.add('is-active');
+        this.setAttribute('aria-pressed', 'true');
+
+        applyFilter(this.dataset.filter);
+      });
+    });
+  </script>
+
+</body>
+</html>
