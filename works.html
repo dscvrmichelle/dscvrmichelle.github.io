@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>All Works — DSCVRMI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=8">
+
+  <style>
+    /* ALL WORKS PAGE */
+
+    .works-page {
+      padding-top: 65px;
+    }
+
+    .works-page h1 {
+      color: var(--green);
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      margin: 0 0 15px;
+      line-height: 1.2;
+    }
+
+    .works-intro {
+      max-width: 620px;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    /* CATEGORY FILTERS */
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .category-btn {
+      padding: 10px 17px;
+      background: var(--paper-dark);
+      border: 1px solid var(--paper-dark);
+      color: var(--green);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .category-btn:hover {
+      border-color: var(--green);
+    }
+
+    .category-btn.active {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+    }
+
+    /* PROJECT GRID */
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 50px 40px;
+    }
+
+    .archive-card {
+      display: block;
+      min-width: 0;
+    }
+
+    .archive-card[hidden] {
+      display: none;
+    }
+
+    .archive-image {
+      width: 100%;
+      aspect-ratio: 1.38 / 1;
+      background: var(--white);
+      border: 14px solid var(--paper-dark);
+      margin-bottom: 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+
+    .archive-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .archive-card:hover .archive-image {
+      transform: translateY(-3px);
+    }
+
+    .archive-type {
+      display: block;
+      font-size: 11px;
+      margin-bottom: 5px;
+      color: var(--green-accent);
+    }
+
+    .archive-card h2 {
+      font-size: 19px;
+      font-weight: 500;
+      margin: 0 0 7px;
+      color: var(--green);
+    }
+
+    .archive-card p {
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .archive-empty {
+      font-size: 14px;
+      color: var(--ink);
+      padding: 20px 0;
+    }
+
+    /* PAGE BOTTOM */
+
+    .works-bottom {
+      padding: 100px 0 35px;
+    }
+
+    .works-bottom a {
+      color: var(--green);
+      font-size: 15px;
+    }
+
+    .works-bottom a:hover {
+      text-decoration: underline;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+      .works-page {
+        padding-top: 40px;
+      }
+
+      .works-page h1 {
+        font-size: 38px;
+      }
+
+      .works-intro {
+        font-size: 14px;
+      }
+
+      .filter-bar {
+        gap: 8px;
+        margin-bottom: 30px;
+      }
+
+      .category-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+      }
+
+      .archive-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .archive-image {
+        border-width: 10px;
+      }
+
+      .works-bottom {
+        padding-top: 75px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="index.html" class="logo">DSCVRMI</a>
+
+      <nav aria-label="Main navigation">
+        <a href="works.html" aria-current="page">works</a>
+        <a href="index.html#about">about</a>
+        <a href="index.html#contact">contact</a>
+      </nav>
+    </header>
+
+    <main class="works-page">
+
+      <!-- INTRO -->
+      <h1>all works</h1>
+
+      <p class="works-intro">
+        A growing archive of things I've made,
+        explored, and experimented with.
+        Different mediums, same curiosity.
+      </p>
+
+      <!-- CATEGORY FILTERS -->
+      <div class="filter-bar" role="group"
+           aria-label="Filter works by category">
+
+        <button class="category-btn active"
+                data-filter="all"
+                aria-pressed="true">all</button>
+
+        <button class="category-btn"
+                data-filter="publication"
+                aria-pressed="false">publication</button>
+
+        <button class="category-btn"
+                data-filter="film"
+                aria-pressed="false">film</button>
+
+        <button class="category-btn"
+                data-filter="3d"
+                aria-pressed="false">3D</button>
+
+        <button class="category-btn"
+                data-filter="craft"
+                aria-pressed="false">craft</button>
+
+        <button class="category-btn"
+                data-filter="culinary"
+                aria-pressed="false">culinary</button>
+
+      </div>
+
+      <!-- ARCHIVE GRID -->
+      <div class="archive-grid">
+
+        <!-- PROJECT 01 -->
+        <a href="namamu-pada-semesta.html"
+           class="archive-card"
+           data-category="publication">
+
+          <div class="archive-image">
+            <img
+              src="namamu-pada-semesta-cover.png"
+              alt="Cover of Namamu Pada Semesta"
+              loading="lazy">
+          </div>
+
+          <span class="archive-type">
+            publication / zine / 2026
+          </span>
+
+          <h2>Namamu Pada Semesta</h2>
+
+          <p>
+            How much of a universe can be built
+            from knowing so little?
+          </p>
+        </a>
+
+        <!-- PROJECT 02 -->
+        <a href="vaterunser.html"
+           class="archive-card"
+           data-category="film">
+
+          <div class="archive-image">
+            <img
+              src="vaterunser thumbnail.png"
+              alt="Still from Vaterunser"
+              loading="lazy">
+          </div>
+
+          <span class="archive-type">
+            film / short film / 2024
+          </span>
+
+          <h2>Vaterunser</h2>
+
+          <p>
+            A campus-set horror short inspired
+            by an urban legend from Jakarta.
+          </p>
+        </a>
+
+        <!-- PROJECT 03 -->
+        <a href="red-hour-blue-hour.html"
+           class="archive-card"
+           data-category="publication">
+
+          <div class="archive-image">
+            <img
+              src="Front Cover Red Hour Blue Hour.png"
+              alt="Cover of Red Hour Blue Hour"
+              loading="lazy">
+          </div>
+
+          <span class="archive-type">
+            publication / experimental zine / 2024
+          </span>
+
+          <h2>Red Hour Blue Hour</h2>
+
+          <p>
+            Two colours, eleven stories,
+            and more than meets the eye.
+          </p>
+        </a>
+
+      </div>
+
+      <p class="archive-empty" id="archiveEmpty" hidden>
+        Nothing here just yet. More explorations
+        are on their way!
+      </p>
+
+      <!-- BACK HOME -->
+      <div class="works-bottom">
+        <a href="index.html">← back to home</a>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <span>© 2026 DSCVRMI</span>
+      <a href="#top">↑ BACK TO THE TOP</a>
+    </footer>
+
+  </div>
+
+  <!-- CATEGORY FILTER FUNCTIONALITY -->
+  <script>
+    const filterButtons =
+      document.querySelectorAll('.category-btn');
+
+    const projectCards =
+      document.querySelectorAll('.archive-card');
+
+    const emptyMessage =
+      document.getElementById('archiveEmpty');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selected = button.dataset.filter;
+
+        filterButtons.forEach(btn => {
+          const active = btn === button;
+
+          btn.classList.toggle('active', active);
+          btn.setAttribute('aria-pressed', String(active));
+        });
+
+        let visibleCount = 0;
+
+        projectCards.forEach(card => {
+          const show =
+            selected === 'all' ||
+            card.dataset.category === selected;
+
+          card.hidden = !show;
+
+          if (show) visibleCount++;
+        });
+
+        emptyMessage.hidden = visibleCount !== 0;
+      });
+    });
+  </script>
+
+</body>
+</html>
