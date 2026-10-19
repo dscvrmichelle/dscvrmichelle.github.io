@@ -44,6 +44,54 @@
       max-width: 850px;
     }
 
+    /* COLOUR GRADING */
+
+.colour-grading-section {
+  margin-top: 45px;
+}
+
+.grading-intro {
+  font-size: 14px;
+  line-height: 1.75;
+  max-width: 850px;
+  margin-bottom: 22px;
+}
+
+.grading-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.grading-card {
+  margin: 0;
+  background: var(--paper-dark);
+  padding: 15px;
+}
+
+.grading-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--white);
+}
+
+.grading-card figcaption {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+  .grading-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grading-card {
+    padding: 10px;
+  }
+}
+
     /* FILM STILL */
 
     .film-stills {
@@ -76,9 +124,79 @@
         padding: 8px;
       }
     }
+
+    
+/* VATERUNSER — STILLS SLIDER */
+
+.stills-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.stills-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.stills-track::-webkit-scrollbar {
+  display: none;
+}
+
+.still-slide {
+  flex: 0 0 calc((100% - 20px) / 2);
+  margin: 0;
+  background: var(--paper-dark);
+  padding: 12px;
+  scroll-snap-align: start;
+}
+
+.still-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.stills-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  color: var(--green);
+  font-size: 13px;
+}
+
+.stills-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.stills-buttons button {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: 8px 16px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.stills-buttons button:hover {
+  background: var(--paper-dark);
+}
+
+@media (max-width: 600px) {
+  .still-slide {
+    flex-basis: 100%;
+  }
+}
+
   </style>
 </head>
-
+  
 <body id="top">
   <div class="page-wrapper">
 
@@ -153,21 +271,85 @@
         </p>
       </section>
 
-      <!-- SELECTED FILM STILL -->
-      <section class="film-stills">
-        <h2>selected still</h2>
+      <section class="colour-grading-section">
+  <h2>colour grading</h2>
 
-        <figure>
-          <img
-            src="vaterunser thumbnail.png"
-            alt="A dark scene from Vaterunser featuring a character beside an illuminated vending machine"
-            loading="lazy">
+  <p class="grading-intro">
+    I worked on the colour grading of Vaterunser to shape a darker,
+    more unsettling atmosphere. Below is a comparison between the
+    original footage and the final graded scene.
+  </p>
 
-          <figcaption>
-            A still from Vaterunser (2024).
-          </figcaption>
-        </figure>
-      </section>
+  <div class="grading-grid">
+    <figure class="grading-card">
+      <img
+        src="vaterunser-before-grade.png"
+        alt="Before colour grading frame from Vaterunser"
+        loading="lazy">
+      <figcaption>
+        <strong>Before</strong><br>
+        Original footage before colour grading.
+      </figcaption>
+    </figure>
+
+    <figure class="grading-card">
+      <img
+        src="vaterunser-after-grade.png"
+        alt="After colour grading frame from Vaterunser"
+        loading="lazy">
+      <figcaption>
+        <strong>After</strong><br>
+        Final graded frame with a darker, colder tone.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+      
+<!-- SELECTED FILM STILLS -->
+<section class="film-stills">
+  <h2>selected stills</h2>
+
+  <div class="stills-slider">
+    <div class="stills-track" id="stillsTrack">
+
+      <figure class="still-slide">
+        <img src="vaterunser-still-01.png"
+             alt="Vaterunser film still 01" loading="lazy">
+      </figure>
+
+      <figure class="still-slide">
+        <img src="vaterunser-still-02.png"
+             alt="Vaterunser film still 02" loading="lazy">
+      </figure>
+
+      <figure class="still-slide">
+        <img src="vaterunser-still-03.png"
+             alt="Vaterunser film still 03" loading="lazy">
+      </figure>
+
+      <figure class="still-slide">
+        <img src="vaterunser-still-04.png"
+             alt="Vaterunser film still 04" loading="lazy">
+      </figure>
+
+    </div>
+  </div>
+
+  <div class="stills-controls">
+    <span id="stillsCounter">01–02 / 04</span>
+
+    <div class="stills-buttons">
+      <button id="stillsPrev" type="button" aria-label="Previous still">
+        ←
+      </button>
+      <button id="stillsNext" type="button" aria-label="Next still">
+        →
+      </button>
+    </div>
+  </div>
+</section>
+
 
       <!-- PROJECT NAVIGATION -->
       <div class="project-navigation">
@@ -184,5 +366,59 @@
     </footer>
 
   </div>
+
+
+<script>
+  const track = document.getElementById('stillsTrack');
+  const slides = Array.from(track.querySelectorAll('.still-slide'));
+  const prev = document.getElementById('stillsPrev');
+  const next = document.getElementById('stillsNext');
+  const counter = document.getElementById('stillsCounter');
+
+  let current = 0;
+
+  function visibleCount() {
+    return window.matchMedia('(max-width: 600px)').matches ? 1 : 2;
+  }
+
+  function updateSlider() {
+    const count = visibleCount();
+    const maxIndex = slides.length - count;
+
+    current = Math.max(0, Math.min(current, maxIndex));
+
+    slides[current].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start'
+    });
+
+    counter.textContent =
+      String(current + 1).padStart(2, '0') +
+      (count === 2
+        ? '–' + String(current + 2).padStart(2, '0')
+        : '') +
+      ' / 04';
+
+    prev.disabled = current === 0;
+    next.disabled = current === maxIndex;
+  }
+
+  prev.addEventListener('click', () => {
+    current--;
+    updateSlider();
+  });
+
+  next.addEventListener('click', () => {
+    current++;
+    updateSlider();
+  });
+
+  window.addEventListener('resize', updateSlider);
+
+  updateSlider();
+</script>
+
+  
 </body>
 </html>
