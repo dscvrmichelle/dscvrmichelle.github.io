@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Futteranbau und Klima — DSCVRMI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=11">
+
+  <style>
+    /* STOP MOTION PROJECT PAGE */
+
+    .stopmotion-page {
+      padding: 60px 0 90px;
+    }
+
+    .stopmotion-back {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: var(--green);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .stopmotion-page h1 {
+      color: var(--green);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 500;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin: 0 0 15px;
+    }
+
+    .stopmotion-category {
+      color: var(--green-accent);
+      font-size: 13px;
+      margin-bottom: 40px;
+    }
+
+    /* VERTICAL YOUTUBE VIDEO */
+
+    .stopmotion-video-section {
+      display: flex;
+      justify-content: center;
+      margin: 35px 0 65px;
+    }
+
+    .stopmotion-video {
+      width: min(100%, 360px);
+      aspect-ratio: 9 / 16;
+      background: #222;
+      overflow: hidden;
+    }
+
+    .stopmotion-video iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+    }
+
+    /* SECTIONS */
+
+    .stopmotion-section {
+      margin-bottom: 65px;
+    }
+
+    .stopmotion-section h2 {
+      color: var(--green);
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      margin: 0 0 22px;
+    }
+
+    .stopmotion-section p {
+      max-width: 800px;
+      font-size: 15px;
+      line-height: 1.85;
+      margin: 0 0 20px;
+    }
+
+    .stopmotion-divider {
+      border: none;
+      border-top: 1px solid var(--paper-dark);
+      margin: 55px 0;
+    }
+
+    /* STORYBOARD */
+
+    .storyboard-intro {
+      margin-bottom: 30px;
+    }
+
+    .storyboard-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .storyboard-item {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .storyboard-paper {
+      padding: 12px;
+      background: var(--paper-dark);
+    }
+
+    .storyboard-paper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #fff;
+    }
+
+    .storyboard-item figcaption {
+      font-size: 12px;
+      color: var(--green);
+      margin-top: 12px;
+    }
+
+    /* PROCESS NOTES */
+
+    .process-notes {
+      max-width: 800px;
+    }
+
+    .process-notes p {
+      margin-bottom: 20px;
+    }
+
+    .tools-line {
+      color: var(--green);
+      font-size: 13px;
+      margin-top: 30px;
+    }
+
+    /* BOTTOM NAV */
+
+    .stopmotion-bottom {
+      margin-top: 80px;
+    }
+
+    .stopmotion-bottom a {
+      color: var(--green);
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .stopmotion-bottom a:hover,
+    .stopmotion-back:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .stopmotion-page {
+        padding: 40px 0 65px;
+      }
+
+      .stopmotion-video-section {
+        margin: 25px 0 45px;
+      }
+
+      .stopmotion-section {
+        margin-bottom: 45px;
+      }
+
+      .stopmotion-section h2 {
+        font-size: 21px;
+      }
+
+      .stopmotion-section p {
+        font-size: 14px;
+      }
+
+      .storyboard-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .stopmotion-divider {
+        margin: 40px 0;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        DSCVRMI
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="works.html">works</a>
+        <a href="about.html">about</a>
+        <a href="index.html#contact">contact</a>
+      </nav>
+    </header>
+
+    <main class="stopmotion-page">
+
+      <!-- PROJECT INTRO -->
+      <a href="works.html" class="stopmotion-back">
+        ← back to works
+      </a>
+
+      <h1>Futteranbau und Klima</h1>
+
+      <p class="stopmotion-category">
+        animation / stop motion / 2024
+      </p>
+
+      <!-- FINAL ANIMATION -->
+      <section class="stopmotion-video-section"
+               aria-label="Final stop-motion animation">
+
+        <div class="stopmotion-video">
+          <iframe
+            src="https://www.youtube.com/embed/33FiYQ6Pfxg"
+            title="Futteranbau und Klima — Stop Motion"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+      </section>
+
+      <hr class="stopmotion-divider">
+
+      <!-- ABOUT THE PROJECT -->
+      <section class="stopmotion-section">
+
+        <h2>about the project</h2>
+
+        <p>
+          Futteranbau und Klima is an educational
+          stop-motion animation created as a semester
+          project in 2024. It explores the connection
+          between animal feed production and environmental
+          impact in Germany, using handmade clay figures
+          and everyday imagery to communicate a complex topic.
+        </p>
+
+        <p>
+          The project began with a storyboard that mapped
+          out the narrative, transitions, and visual elements.
+          Using modelling clay, I created miniature food
+          and animal figures, photographed them frame by frame,
+          and assembled the animation in Adobe Premiere Pro.
+        </p>
+
+      </section>
+
+      <hr class="stopmotion-divider">
+
+      <!-- STORYBOARD -->
+      <section class="stopmotion-section">
+
+        <h2>from storyboard to screen</h2>
+
+        <p class="storyboard-intro">
+          Before animating, I planned the sequence through
+          a hand-drawn storyboard. It helped me organise
+          the visual narrative, anticipate transitions,
+          and keep track of individual scenes during production.
+        </p>
+
+        <div class="storyboard-grid">
+
+          <!-- STORYBOARD PAGE 2 -->
+          <figure class="storyboard-item">
+            <div class="storyboard-paper">
+              <img
+                src="stopmotion-storyboard-2.png"
+                alt="Storyboards showing food, livestock, and the opening scenes"
+                loading="lazy">
+            </div>
+
+            <figcaption>
+              01 — Setting up the narrative
+            </figcaption>
+          </figure>
+
+          <!-- STORYBOARD PAGE 3 -->
+          <figure class="storyboard-item">
+            <div class="storyboard-paper">
+              <img
+                src="stopmotion-storyboard-3.png"
+                alt="Storyboard sketches exploring livestock and animal feed"
+                loading="lazy">
+            </div>
+
+            <figcaption>
+              02 — Building the story
+            </figcaption>
+          </figure>
+
+          <!-- STORYBOARD PAGE 4 -->
+          <figure class="storyboard-item">
+            <div class="storyboard-paper">
+              <img
+                src="stopmotion-storyboard-4.png"
+                alt="Storyboard sketches for the next scenes and transitions"
+                loading="lazy">
+            </div>
+
+            <figcaption>
+              03 — Planning the transitions
+            </figcaption>
+          </figure>
+
+          <!-- STORYBOARD PAGE 5 -->
+          <figure class="storyboard-item">
+            <div class="storyboard-paper">
+              <img
+                src="stopmotion-storyboard-5.png"
+                alt="Final storyboard sketches with statistics and looping ending"
+                loading="lazy">
+            </div>
+
+            <figcaption>
+              04 — Bringing the story full circle
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </section>
+
+      <hr class="stopmotion-divider">
+
+      <!-- CREATIVE PROCESS -->
+      <section class="stopmotion-section">
+
+        <h2>the making of</h2>
+
+        <div class="process-notes">
+
+          <p>
+            This was my first time experimenting
+            with stop-motion animation. Although
+            it wasn't a medium I had initially been
+            interested in, I unexpectedly enjoyed
+            the hands-on process of shaping the clay
+            figures and capturing the animation
+            one frame at a time.
+          </p>
+
+          <p>
+            Production came with a few practical challenges.
+            A faulty tripod meant I had to improvise
+            a different setup for photographing the scenes.
+            Lighting was another obstacle, as I relied
+            on natural daylight that wasn't always consistent.
+          </p>
+
+          <p>
+            Working through these limitations taught me
+            the importance of preparation and flexibility.
+            The storyboard proved especially useful:
+            whenever something didn't go according to plan,
+            I could return to it and pick up where I left off.
+          </p>
+
+          <p class="tools-line">
+            techniques &amp; tools:
+            modelling clay · frame-by-frame photography ·
+            Adobe Premiere Pro
+          </p>
+
+        </div>
+
+      </section>
+
+      <!-- BOTTOM NAVIGATION -->
+      <div class="stopmotion-bottom">
+        <a href="works.html">
+          ← back to all works
+        </a>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <span>© 2026 DSCVRMI</span>
+
+      <a href="#top">
+        ↑ BACK TO THE TOP
+      </a>
+    </footer>
+
+  </div>
+
+</body>
+</html>
