@@ -167,6 +167,24 @@ h2 {
 }
 
 
+/* HOMEPAGE — VIEW ALL WORKS */
+
+.view-all-works {
+  margin-top: 35px;
+  text-align: right;
+}
+
+.view-all-works a {
+  color: var(--green);
+  font-size: 15px;
+}
+
+.view-all-works a:hover {
+  text-decoration: underline;
+}
+
+
+
 /* PROJECT COVER THUMBNAIL */
 
 .project-image {
