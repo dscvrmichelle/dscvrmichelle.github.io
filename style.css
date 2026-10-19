@@ -269,6 +269,41 @@ h2 {
   text-decoration: underline;
 }
 
+
+/* CONTACT — FINAL TOUCHES */
+
+.contact-section {
+  padding-top: 75px;
+  padding-bottom: 110px;
+}
+
+.contact-heading {
+  color: var(--ink);
+  font-size: 23px;
+  margin: 12px 0;
+}
+
+.contact-description {
+  max-width: 500px;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.contact-links a {
+  display: inline-block;
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+  color: var(--green-accent);
+  text-decoration: underline;
+}
+
+
 /* 09. FOOTER */
 
 .site-footer {
