@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vaterunser — DSCVRMI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=8">
+
+  <style>
+    /* VATERUNSER — FILM PLAYER */
+
+    .film-frame {
+      background: var(--paper-dark);
+      padding: 18px;
+      margin-bottom: 35px;
+    }
+
+    .film-frame iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      border: none;
+      background: #111;
+    }
+
+    /* CONTRIBUTION */
+
+    .film-contribution {
+      margin-top: 45px;
+    }
+
+    .film-contribution p {
+      font-size: 14px;
+      line-height: 1.75;
+      max-width: 850px;
+    }
+
+    /* FILM STILL */
+
+    .film-stills {
+      margin-top: 45px;
+    }
+
+    .film-stills figure {
+      margin: 0;
+      background: var(--paper-dark);
+      padding: 15px;
+    }
+
+    .film-stills img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .film-stills figcaption {
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .film-frame {
+        padding: 8px;
+      }
+
+      .film-stills figure {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <div class="page-wrapper">
+
+    <!-- NAVIGATION -->
+    <header class="site-header">
+      <a href="index.html" class="logo">DSCVRMI</a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html#works">works</a>
+        <a href="index.html#about">about</a>
+        <a href="index.html#contact">contact</a>
+      </nav>
+    </header>
+
+    <main class="project-detail">
+
+      <!-- PROJECT HEADER -->
+      <a href="index.html#works" class="back-link">
+        ← back to works
+      </a>
+
+      <h1 class="project-title">Vaterunser</h1>
+
+      <p class="project-meta">
+        film / short film / 2024
+      </p>
+
+      <!-- FILM PLAYER -->
+      <div class="film-frame">
+        <iframe
+          src="https://www.youtube.com/embed/phMbURDMmPM"
+          title="Vaterunser — Short Horror Film"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <!-- ABOUT THE PROJECT -->
+      <section class="project-description">
+        <h2>about the project</h2>
+
+        <p>
+          Vaterunser is a short horror film created during
+          Interdisciplinary Week at FH Kiel in 2024.
+          Inspired by an urban legend from Jakarta,
+          the story reimagines a familiar tale
+          within a university campus setting in Germany.
+        </p>
+
+        <p>
+          The project was developed as a collaborative
+          film production, exploring suspense through
+          atmosphere, sound, and visual storytelling.
+        </p>
+      </section>
+
+      <!-- MY CONTRIBUTION -->
+      <section class="film-contribution">
+        <h2>my contribution</h2>
+
+        <p>
+          Camera / Sound / Editing
+        </p>
+
+        <p>
+          I contributed to the camera work, sound,
+          and post-production editing of the film,
+          including work with Adobe Premiere Pro
+          and After Effects.
+        </p>
+      </section>
+
+      <!-- SELECTED FILM STILL -->
+      <section class="film-stills">
+        <h2>selected still</h2>
+
+        <figure>
+          <img
+            src="vaterunser thumbnail.png"
+            alt="A dark scene from Vaterunser featuring a character beside an illuminated vending machine"
+            loading="lazy">
+
+          <figcaption>
+            A still from Vaterunser (2024).
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- PROJECT NAVIGATION -->
+      <div class="project-navigation">
+        <a href="index.html#works">← all works</a>
+        <a href="red-hour-blue-hour.html">next project →</a>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <span>© 2026 DSCVRMI</span>
+      <a href="#top">↑ BACK TO THE TOP</a>
+    </footer>
+
+  </div>
+</body>
+</html>
