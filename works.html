@@ -4,187 +4,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>All Works — DSCVRMI</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ALL WORKS PAGE */
+    /* =========================
+       WORKS PAGE
+    ========================= */
 
     .works-page {
-      padding-top: 65px;
+      padding: 75px clamp(25px, 7vw, 110px) 90px;
     }
 
-    .works-page h1 {
-      color: var(--green);
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(36px, 5vw, 56px);
+    .works-heading {
+      margin-bottom: 40px;
+    }
+
+    .works-heading h1 {
+      font-family: var(--hand);
+      font-size: clamp(75px, 9vw, 125px);
       font-weight: 400;
-      letter-spacing: -1.5px;
-      margin: 0 0 15px;
-      line-height: 1.2;
+      line-height: 0.9;
+      margin: 0 0 25px;
     }
 
     .works-intro {
-      max-width: 620px;
+      max-width: 540px;
       font-size: 15px;
       line-height: 1.7;
-      margin-bottom: 35px;
+      color: var(--ink);
     }
 
-    /* CATEGORY FILTERS */
+    /* =========================
+       FILTER
+    ========================= */
 
     .filter-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .category-btn {
-      padding: 10px 17px;
       background: var(--paper-dark);
-      border: 1px solid var(--paper-dark);
+      border: 1px solid transparent;
       color: var(--green);
-      font-family: 'Inter', sans-serif;
+      padding: 11px 19px;
+      font-family: var(--sans);
       font-size: 13px;
       cursor: pointer;
-      transition: 0.2s ease;
+      transition: background .2s, transform .2s;
     }
 
     .category-btn:hover {
+      transform: translateY(-3px);
       border-color: var(--green);
     }
 
     .category-btn.active {
       background: var(--green);
-      color: var(--white);
-      border-color: var(--green);
+      color: var(--paper);
     }
 
-    /* PROJECT GRID */
-
-    .archive-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 50px 40px;
+    .category-btn:focus-visible {
+      outline: 2px dashed var(--green);
+      outline-offset: 4px;
     }
 
-    .archive-card {
-      display: block;
-      min-width: 0;
+    /* =========================
+       PROJECT GRID
+    ========================= */
+
+    .works-page .project-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      row-gap: 55px;
     }
 
-    .archive-card[hidden] {
+    .works-page .project-card[hidden] {
+      display: none !important;
+    }
+
+    /* Avoid shifting the second card */
+    .works-page .project-card:nth-child(2) {
+      transform: none;
+    }
+
+    .works-page .project-card:hover,
+    .works-page .project-card:nth-child(2):hover {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .works-page .project-image-placeholder {
       display: none;
     }
 
-    .archive-image {
-      width: 100%;
-      aspect-ratio: 1.38 / 1;
-      background: var(--white);
-      border: 14px solid var(--paper-dark);
-      margin-bottom: 14px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease;
+    .works-page .project-info {
+      min-height: 170px;
     }
 
-    .archive-image img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-    }
-
-    .archive-card:hover .archive-image {
-      transform: translateY(-3px);
-    }
-
-    .archive-type {
-      display: block;
-      font-size: 11px;
-      margin-bottom: 5px;
-      color: var(--green-accent);
-    }
-
-    .archive-card h2 {
-      font-size: 19px;
-      font-weight: 500;
-      margin: 0 0 7px;
-      color: var(--green);
-    }
-
-    .archive-card p {
-      font-size: 13px;
-      line-height: 1.6;
-      margin: 0;
-    }
+    /* =========================
+       EMPTY MESSAGE
+    ========================= */
 
     .archive-empty {
-      font-size: 14px;
-      color: var(--ink);
-      padding: 20px 0;
+      margin: 30px 0;
+      color: var(--green);
+      font-family: var(--hand);
+      font-size: 35px;
     }
 
-    /* PAGE BOTTOM */
+    .archive-empty[hidden] {
+      display: none;
+    }
+
+    /* =========================
+       BOTTOM LINK
+    ========================= */
 
     .works-bottom {
-      padding: 100px 0 35px;
+      margin-top: 85px;
     }
 
-    .works-bottom a {
-      color: var(--green);
-      font-size: 15px;
+    .works-bottom .handwritten-link {
+      font-size: 42px;
     }
 
-    .works-bottom a:hover {
-      text-decoration: underline;
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1050px) {
+      .works-page .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
-    /* MOBILE */
-
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
       .works-page {
-        padding-top: 40px;
+        padding: 55px 22px 65px;
       }
 
-      .works-page h1 {
-        font-size: 38px;
+      .works-heading h1 {
+        font-size: 78px;
       }
 
       .works-intro {
-        font-size: 14px;
+        font-size: 13px;
       }
 
       .filter-bar {
         gap: 8px;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
       }
 
       .category-btn {
-        padding: 9px 12px;
+        padding: 9px 13px;
         font-size: 12px;
       }
 
-      .archive-grid {
+      .works-page .project-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 35px;
       }
 
-      .archive-image {
-        border-width: 10px;
+      .works-page .project-info {
+        min-height: auto;
       }
 
       .works-bottom {
-        padding-top: 75px;
+        margin-top: 65px;
       }
     }
   </style>
@@ -192,232 +186,254 @@
 
 <body id="top">
 
-  <div class="page-wrapper">
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      DSCVRMI<span class="brand-dot">.</span>
+    </a>
 
-    <!-- HEADER -->
-    <header class="site-header">
-      <a href="index.html" class="logo">DSCVRMI</a>
+    <nav>
+      <a href="works.html" aria-current="page">works</a>
+      <a href="about.html">about</a>
+      <a href="index.html#contact">contact</a>
+    </nav>
+  </header>
 
-      <nav aria-label="Main navigation">
-        <a href="works.html" aria-current="page">works</a>
-        <a href="index.html#about">about</a>
-        <a href="index.html#contact">contact</a>
-      </nav>
-    </header>
+  <main class="works-page">
 
-    <main class="works-page">
-
-      <!-- INTRO -->
-      <h1>all works</h1>
+    <!-- PAGE INTRO -->
+    <section class="works-heading">
+      <h1>all works <span>✳</span></h1>
 
       <p class="works-intro">
         A growing archive of things I've made,
         explored, and experimented with.
         Different mediums, same curiosity.
       </p>
+    </section>
 
-      <!-- CATEGORY FILTERS -->
-      <div class="filter-bar" role="group"
-           aria-label="Filter works by category">
+    <!-- CATEGORY FILTERS -->
+    <div class="filter-bar"
+         role="group"
+         aria-label="Filter works by category">
 
-        <button class="category-btn active"
-                data-filter="all"
-                aria-pressed="true">all</button>
+      <button class="category-btn active"
+              data-filter="all"
+              aria-pressed="true">all</button>
 
-        <button class="category-btn"
-                data-filter="publication"
-                aria-pressed="false">publication</button>
+      <button class="category-btn"
+              data-filter="publication"
+              aria-pressed="false">publication</button>
 
-        <button class="category-btn"
-                data-filter="film"
-                aria-pressed="false">film</button>
+      <button class="category-btn"
+              data-filter="film"
+              aria-pressed="false">film</button>
 
-        <button class="category-btn"
-                data-filter="animation"
-                aria-pressed="false">animation</button>
-        
-        <button class="category-btn"
-                data-filter="3d"
-                aria-pressed="false">3D</button>
+      <button class="category-btn"
+              data-filter="animation"
+              aria-pressed="false">animation</button>
 
-        <button class="category-btn"
-                data-filter="event branding"
-                aria-pressed="false">event branding</button>
+      <button class="category-btn"
+              data-filter="3d"
+              aria-pressed="false">3D</button>
 
-        <button class="category-btn"
-                data-filter="craft"
-                aria-pressed="false">craft</button>
+      <button class="category-btn"
+              data-filter="event branding"
+              aria-pressed="false">event branding</button>
 
-        <button class="category-btn"
-                data-filter="culinary"
-                aria-pressed="false">culinary</button>
+      <button class="category-btn"
+              data-filter="craft"
+              aria-pressed="false">craft</button>
 
-      </div>
+      <button class="category-btn"
+              data-filter="culinary"
+              aria-pressed="false">culinary</button>
 
-      <!-- ARCHIVE GRID -->
-      <div class="archive-grid">
+    </div>
 
-         <!-- PROJECT NUSWANTARA -->
-        <a href="nuswantara.html"
-           class="archive-card"
-           data-category="event branding">
+    <!-- ALL PROJECTS -->
+    <div class="project-grid">
 
-          <div class="archive-image">
-            <img
-              src="poster nuswantara.png"
-              alt="Nuswantara Poster"
-              loading="lazy">
-          </div>
+      <!-- PROJECT 01: NUSWANTARA -->
+      <a class="project-card"
+         href="nuswantara.html"
+         data-category="event branding">
 
-          <span class="archive-type">
-            event branding / multimedia production / 2026
-          </span>
+        <div class="project-image">
+          <img src="poster nuswantara.png"
+               alt="NUSWANTARA poster"
+               loading="lazy">
+          <span class="project-sticker">01</span>
+        </div>
 
-          <h2>NUSWANTARA</h2>
+        <div class="project-info">
+          <p class="project-meta">
+            EVENT BRANDING / MULTIMEDIA PRODUCTION / 2026
+          </p>
+
+          <h3>NUSWANTARA</h3>
 
           <p>
-            Visual branding, promotional content, and event documentation for an Indonesian cultural night in Kiel.
+            Visual branding, promotional content, and event
+            documentation for an Indonesian cultural night in Kiel.
           </p>
-        </a>
-        
-        <!-- PROJECT NAMAMU PADA SEMESTA -->
-        <a href="namamu-pada-semesta.html"
-           class="archive-card"
-           data-category="publication">
 
-          <div class="archive-image">
-            <img
-              src="namamu-pada-semesta-cover.png"
-              alt="Cover of Namamu Pada Semesta"
-              loading="lazy">
-          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
 
-          <span class="archive-type">
-            publication / zine / 2026
-          </span>
+      <!-- PROJECT 02: NAMAMU PADA SEMESTA -->
+      <a class="project-card"
+         href="namamu-pada-semesta.html"
+         data-category="publication">
 
-          <h2>Namamu Pada Semesta</h2>
+        <div class="project-image">
+          <img src="namamu-pada-semesta-cover.png"
+               alt="Namamu Pada Semesta cover"
+               loading="lazy">
+          <span class="project-sticker">02</span>
+        </div>
+
+        <div class="project-info">
+          <p class="project-meta">
+            PUBLICATION / ZINE / 2026
+          </p>
+
+          <h3>Namamu Pada Semesta</h3>
 
           <p>
             How much of a universe can be built
             from knowing so little?
           </p>
-        </a>
 
-        <!-- PROJECT VATERUNSER -->
-        <a href="vaterunser.html"
-           class="archive-card"
-           data-category="film">
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
 
-          <div class="archive-image">
-            <img
-              src="vaterunser thumbnail.png"
-              alt="Still from Vaterunser"
-              loading="lazy">
-          </div>
+      <!-- PROJECT 03: VATERUNSER -->
+      <a class="project-card"
+         href="vaterunser.html"
+         data-category="film">
 
-          <span class="archive-type">
-            film / short film / 2024
-          </span>
+        <div class="project-image">
+          <img src="vaterunser thumbnail.png"
+               alt="Vaterunser film still"
+               loading="lazy">
+          <span class="project-sticker">03</span>
+        </div>
 
-          <h2>Vaterunser</h2>
+        <div class="project-info">
+          <p class="project-meta">
+            AUDIOVISUAL / SHORT FILM / 2024
+          </p>
+
+          <h3>Vaterunser</h3>
 
           <p>
             A campus-set horror short inspired
             by an urban legend from Jakarta.
           </p>
-        </a>
 
-        <!-- PROJECT RED HOUR BLUE HOUR -->
-        <a href="red-hour-blue-hour.html"
-           class="archive-card"
-           data-category="publication">
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
 
-          <div class="archive-image">
-            <img
-              src="Front Cover Red Hour Blue Hour.png"
-              alt="Cover of Red Hour Blue Hour"
-              loading="lazy">
-          </div>
+      <!-- PROJECT 04: RED HOUR BLUE HOUR -->
+      <a class="project-card"
+         href="red-hour-blue-hour.html"
+         data-category="publication">
 
-          <span class="archive-type">
-            publication / experimental zine / 2024
-          </span>
+        <div class="project-image">
+          <img src="Front Cover Red Hour Blue Hour.png"
+               alt="Red Hour Blue Hour cover"
+               loading="lazy">
+          <span class="project-sticker">04</span>
+        </div>
 
-          <h2>Red Hour Blue Hour</h2>
+        <div class="project-info">
+          <p class="project-meta">
+            PUBLICATION / EXPERIMENTAL ZINE / 2024
+          </p>
+
+          <h3>Red Hour Blue Hour</h3>
 
           <p>
             Two colours, eleven stories,
             and more than meets the eye.
           </p>
-        </a>
 
-        
-          <!-- PROJECT FUTTERANBAU UND KLIMA -->
-          <a href="futteranbau-und-klima.html"
-           class="project-card"
-           data-category="animation">
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
 
-            <div class="project-image">
-              <img
-              src="stopmotion-thumbnail.jpg"
-              alt="Futteranbau und Klima stop-motion animation"
-              loading="lazy">
-              </div>
+      <!-- PROJECT 05: FUTTERANBAU UND KLIMA -->
+      <a class="project-card"
+         href="futteranbau-und-klima.html"
+         data-category="animation">
 
-              <span class="project-type">
-                animation / stop motion / 2024
-              </span>
+        <div class="project-image">
+          <img src="stopmotion-thumbnail.jpg"
+               alt="Futteranbau und Klima stop-motion"
+               loading="lazy">
+          <span class="project-sticker">05</span>
+        </div>
 
-              <h3>Futteranbau und Klima</h3>
+        <div class="project-info">
+          <p class="project-meta">
+            ANIMATION / STOP MOTION / 2024
+          </p>
 
-              <p>
-              Turning a complex environmental topic
-              into a little world of clay.
-              </p>
-            </a>
+          <h3>Futteranbau und Klima</h3>
 
+          <p>
+            Turning a complex environmental topic
+            into a little world of clay.
+          </p>
 
-      </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
 
-      <p class="archive-empty" id="archiveEmpty" hidden>
-        Nothing here just yet. More explorations
-        are on their way!
-      </p>
+    </div>
 
-      <!-- BACK HOME -->
-      <div class="works-bottom">
-        <a href="index.html">← back to home</a>
-      </div>
+    <!-- EMPTY CATEGORY MESSAGE -->
+    <p class="archive-empty" id="archiveEmpty" hidden>
+      Nothing here just yet. More explorations are on their way!
+    </p>
 
-    </main>
+    <!-- BACK HOME -->
+    <div class="works-bottom">
+      <a class="handwritten-link" href="index.html">
+        back to home ↖
+      </a>
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <span>© 2026 DSCVRMI</span>
-      <a href="#top">↑ BACK TO THE TOP</a>
-    </footer>
+  </main>
 
-  </div>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>© 2026 DSCVRMI</span>
+    <a href="#top">↑ BACK TO THE TOP</a>
+  </footer>
 
-  <!-- CATEGORY FILTER FUNCTIONALITY -->
+  <!-- CATEGORY FILTER SCRIPT -->
   <script>
     const filterButtons =
       document.querySelectorAll('.category-btn');
 
     const projectCards =
-      document.querySelectorAll('.archive-card');
+      document.querySelectorAll('.works-page .project-card');
 
     const emptyMessage =
       document.getElementById('archiveEmpty');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
+
         const selected = button.dataset.filter;
 
         filterButtons.forEach(btn => {
           const active = btn === button;
-
           btn.classList.toggle('active', active);
           btn.setAttribute('aria-pressed', String(active));
         });
