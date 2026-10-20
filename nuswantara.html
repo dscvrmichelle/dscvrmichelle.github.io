@@ -9,6 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
   <!-- GLOBAL CSS -->
@@ -333,98 +334,6 @@
     }
 
     /* ============================
-       EVENT PHOTOGRAPHY SLIDER
-    ============================ */
-
-    .nus-photo-slider {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .nus-photo-viewport {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .nus-photo-track {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      overscroll-behavior-x: contain;
-    }
-
-    .nus-photo-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .nus-photo-slide {
-      flex: 0 0 calc((100% - 20px) / 2);
-      min-width: 0;
-      margin: 0;
-      padding: 12px;
-      box-sizing: border-box;
-      background: var(--paper-dark, #E9E1D3);
-      scroll-snap-align: start;
-    }
-
-    .nus-photo-slide img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: contain;
-    }
-
-    .nus-photo-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-      gap: 20px;
-    }
-
-    .nus-photo-counter {
-      font-size: 12px;
-      letter-spacing: 1px;
-      font-variant-numeric: tabular-nums;
-      color: var(--green, #244B3A);
-    }
-
-    .nus-photo-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .nus-photo-btn {
-      padding: 8px 17px;
-      border: 1px solid var(--green, #244B3A);
-      border-radius: 0;
-      background: transparent;
-      color: var(--green, #244B3A);
-      font-family: "Inter", sans-serif;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .nus-photo-btn:hover:not(:disabled) {
-      background: var(--paper-dark, #E9E1D3);
-    }
-
-    .nus-photo-btn:disabled {
-      opacity: 0.3;
-      cursor: default;
-    }
-
-    .nus-photo-btn:focus-visible {
-      outline: 2px solid var(--green-accent, #357A4E);
-      outline-offset: 3px;
-    }
-
-    /* ============================
        AFTERMOVIE
     ============================ */
 
@@ -524,12 +433,6 @@
        MOBILE
     ============================ */
 
-    @media (max-width: 600px) {
-      .nus-photo-slide {
-        flex-basis: 100%;
-      }
-    }
-
     @media (max-width: 480px) {
 
       .nus-category {
@@ -557,16 +460,6 @@
 
       .nus-video-frame {
         padding: 8px;
-      }
-
-      .nus-photo-slide {
-        padding: 8px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .nus-photo-track {
-        scroll-behavior: auto;
       }
     }
 
@@ -653,16 +546,8 @@
             on developing the event's visual identity.
             I then independently created several
             promotional and event materials,
-            including the main poster, banners,
+            including the poster, banners,
             and admission tickets.
-          </p>
-
-          <p>
-            My involvement also extended beyond
-            graphic design. I created motion graphics,
-            documented the event through photography
-            and videography, and edited the final
-            aftermovie.
           </p>
 
         </div>
@@ -727,8 +612,7 @@
             different promotional and event materials,
             adapting the compositions to suit each
             format and its purpose.
-            The designs shown here were created
-            independently by me.
+            The designs shown here were created by me.
           </p>
 
         </div>
@@ -811,7 +695,7 @@
           </p>
 
           <p>
-            During the event, I worked as the
+            During the event, I worked as one of the
             photobooth attendants, assisting guests
             and operating the photobooth.
           </p>
@@ -846,7 +730,7 @@
 
             <div class="nus-image-frame">
               <img
-                src="nuswantara-photobooth-final.HEIC"
+                src="nuswantara-photobooth-final.jpg"
                 alt="Final NUSWANTARA photobooth with batik backdrop, draped fabrics, paintings, and vintage props"
                 loading="lazy">
             </div>
@@ -963,7 +847,7 @@
     </section>
 
     <!-- ============================
-         05 — EVENT PHOTOGRAPHY
+         05 — AFTERMOVIE
     ============================ -->
 
     <section class="nus-section">
@@ -972,128 +856,7 @@
 
         <div class="nus-section-heading">
           <span class="nus-section-label">
-            05 / DOCUMENTATION
-          </span>
-
-          <h2>event photography</h2>
-        </div>
-
-        <div class="nus-section-text">
-          <p>
-            I also documented NUSWANTARA through
-            photography, capturing the performances,
-            atmosphere, and moments throughout
-            the cultural night.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- PHOTO SLIDER -->
-      <div
-        class="nus-photo-slider"
-        id="nusPhotoSlider"
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="NUSWANTARA event photography">
-
-        <div class="nus-photo-viewport">
-
-          <div class="nus-photo-track" id="nusPhotoTrack">
-
-            <figure class="nus-photo-slide">
-              <img
-                src="nuswantara-photo-01.jpg"
-                alt="NUSWANTARA event photograph 1"
-                loading="lazy">
-            </figure>
-
-            <figure class="nus-photo-slide">
-              <img
-                src="nuswantara-photo-02.jpg"
-                alt="NUSWANTARA event photograph 2"
-                loading="lazy">
-            </figure>
-
-            <figure class="nus-photo-slide">
-              <img
-                src="nuswantara-photo-03.jpg"
-                alt="NUSWANTARA event photograph 3"
-                loading="lazy">
-            </figure>
-
-            <figure class="nus-photo-slide">
-              <img
-                src="nuswantara-photo-04.jpg"
-                alt="NUSWANTARA event photograph 4"
-                loading="lazy">
-            </figure>
-
-            <figure class="nus-photo-slide">
-              <img
-                src="nuswantara-photo-05.jpg"
-                alt="NUSWANTARA event photograph 5"
-                loading="lazy">
-            </figure>
-
-            <figure class="nus-photo-slide">
-              <img
-                src="nuswantara-photo-06.jpg"
-                alt="NUSWANTARA event photograph 6"
-                loading="lazy">
-            </figure>
-
-          </div>
-
-        </div>
-
-        <!-- SLIDER CONTROLS -->
-        <div class="nus-photo-controls">
-
-          <span
-            class="nus-photo-counter"
-            id="nusPhotoCounter"
-            aria-live="polite">
-            01–02 / 06
-          </span>
-
-          <div class="nus-photo-buttons">
-
-            <button
-              class="nus-photo-btn"
-              id="nusPhotoPrev"
-              type="button"
-              aria-label="Previous photograph">
-              ←
-            </button>
-
-            <button
-              class="nus-photo-btn"
-              id="nusPhotoNext"
-              type="button"
-              aria-label="Next photograph">
-              →
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ============================
-         06 — AFTERMOVIE
-    ============================ -->
-
-    <section class="nus-section">
-
-      <div class="nus-section-intro">
-
-        <div class="nus-section-heading">
-          <span class="nus-section-label">
-            06 / THE AFTERMOVIE
+            05 / THE AFTERMOVIE
           </span>
 
           <h2>videography &amp; aftermovie</h2>
@@ -1157,84 +920,6 @@
     <span>© 2026 DSCVRMI</span>
     <a href="#top">↑ BACK TO THE TOP</a>
   </footer>
-
-  <!-- ============================
-       PHOTO SLIDER SCRIPT
-  ============================ -->
-
-  <script>
-
-    const track = document.getElementById('nusPhotoTrack');
-
-    const slides = Array.from(
-      track.querySelectorAll('.nus-photo-slide')
-    );
-
-    const prev = document.getElementById('nusPhotoPrev');
-    const next = document.getElementById('nusPhotoNext');
-    const counter = document.getElementById('nusPhotoCounter');
-
-    let current = 0;
-
-    function visibleCount() {
-      return window.matchMedia('(max-width: 600px)').matches
-        ? 1
-        : 2;
-    }
-
-    function updateSlider(smooth = true) {
-
-      const count = visibleCount();
-      const maxIndex = Math.max(0, slides.length - count);
-
-      current = Math.max(0, Math.min(current, maxIndex));
-
-      const target = slides[current];
-
-      const reducedMotion = window.matchMedia(
-        '(prefers-reduced-motion: reduce)'
-      ).matches;
-
-      track.scrollTo({
-        left: target.offsetLeft - slides[0].offsetLeft,
-        behavior: smooth && !reducedMotion
-          ? 'smooth'
-          : 'instant'
-      });
-
-      const start = String(current + 1).padStart(2, '0');
-
-      const end = String(
-        Math.min(current + count, slides.length)
-      ).padStart(2, '0');
-
-      const total = String(slides.length).padStart(2, '0');
-
-      counter.textContent = count === 2
-        ? `${start}–${end} / ${total}`
-        : `${start} / ${total}`;
-
-      prev.disabled = current === 0;
-      next.disabled = current === maxIndex;
-    }
-
-    prev.addEventListener('click', () => {
-      current--;
-      updateSlider();
-    });
-
-    next.addEventListener('click', () => {
-      current++;
-      updateSlider();
-    });
-
-    window.addEventListener('resize', () => {
-      updateSlider(false);
-    });
-
-    updateSlider(false);
-
-  </script>
 
 </body>
 </html>
