@@ -646,3 +646,643 @@ h1, h2, h3, p {
     transition: none !important;
   }
 }
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+:root {
+  --paper: #F5F0E6;
+  --paper-dark: #E9E1D3;
+  --green: #244B3A;
+  --green-accent: #357A4E;
+  --light-green: #A7BE89;
+  --ink: #222222;
+  --white: #FFFFFF;
+}
+
+
+/* BASE */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================
+   NAV
+========================================= */
+
+.site-header {
+  height: 88px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7vw;
+
+  background: var(--paper-dark);
+}
+
+.logo {
+  color: var(--green);
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+.main-nav {
+  display: flex;
+  gap: 42px;
+}
+
+.main-nav a {
+  color: var(--green);
+  text-decoration: none;
+
+  font-size: 1.25rem;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.main-nav a:hover {
+  transform: translateY(-2px);
+  opacity: 0.65;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.about-hero {
+  position: relative;
+
+  min-height: 720px;
+
+  padding:
+    48px
+    8vw
+    90px;
+
+  background: var(--paper);
+}
+
+
+/* big handwriting */
+
+.about-title-row {
+  position: relative;
+  height: 150px;
+}
+
+.about-title {
+  position: absolute;
+
+  margin: 0;
+
+  color: var(--green);
+
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-size: clamp(5rem, 8vw, 8rem);
+
+  line-height: 0.8;
+}
+
+.about-title-left {
+  left: 0;
+  top: 0;
+}
+
+.about-title-right {
+  right: 9%;
+  top: 65px;
+}
+
+
+/* intro */
+
+.about-intro {
+  position: relative;
+
+  max-width: 1100px;
+
+  margin:
+    30px
+    auto
+    0;
+
+  min-height: 360px;
+}
+
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.about-photo-wrap {
+  position: absolute;
+
+  left: 0;
+  top: 30px;
+
+  width: 270px;
+  height: 330px;
+
+  background: #d9d9d9;
+
+  transform: rotate(-14deg);
+
+  overflow: hidden;
+}
+
+.about-photo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: rotate(14deg) scale(1.2);
+}
+
+
+/* =========================================
+   NAME TAGS
+========================================= */
+
+.name-area {
+  position: absolute;
+
+  left: 42%;
+  right: 0;
+  top: 30px;
+
+  height: 300px;
+}
+
+.name-tag {
+  position: absolute;
+
+  display: inline-block;
+
+  padding:
+    4px
+    14px
+    2px;
+
+  background: var(--paper-dark);
+
+  color: var(--green);
+
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 2.8rem;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+.tag-michelle {
+  left: 0;
+  top: 10px;
+
+  transform: rotate(-8deg);
+}
+
+.tag-elle {
+  right: 3%;
+  top: 35px;
+
+  transform: rotate(12deg);
+}
+
+.tag-maikel {
+  left: 16%;
+  top: 145px;
+
+  transform: rotate(14deg);
+}
+
+.tag-kel {
+  right: 0;
+  top: 160px;
+
+  transform: rotate(-14deg);
+}
+
+
+/* =========================================
+   FIND OUT
+========================================= */
+
+.find-out-link {
+  position: absolute;
+
+  bottom: 50px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: var(--green);
+  text-decoration: none;
+
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 2rem;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.find-out-link:hover {
+  transform:
+    translateX(-50%)
+    translateY(3px);
+
+  opacity: 0.65;
+}
+
+
+/* =========================================
+   ABOUT BODY / ARCH
+========================================= */
+
+.about-body {
+  position: relative;
+
+  background: var(--light-green);
+
+  margin-top: 0;
+
+  padding:
+    110px
+    24px
+    120px;
+
+  border-radius:
+    50% 50% 0 0 /
+    10% 10% 0 0;
+}
+
+
+/*
+This pseudo element makes the arch feel
+larger and softer.
+*/
+
+.about-body::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: -95px;
+
+  height: 190px;
+
+  background: var(--light-green);
+
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+  z-index: 0;
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(680px, 88%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
+
+.about-section {
+  margin-bottom: 64px;
+}
+
+.about-section h2 {
+  margin:
+    0
+    0
+    24px;
+
+  text-align: center;
+
+  color: var(--white);
+
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 2.35rem;
+  font-weight: 400;
+}
+
+.about-section p {
+  margin:
+    0
+    0
+    14px;
+
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+
+/* =========================================
+   TOOLS
+========================================= */
+
+.tools-section {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tools-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 70px;
+}
+
+.tools-grid ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tools-grid li {
+  margin-bottom: 4px;
+}
+
+
+/* =========================================
+   SOCIALS
+========================================= */
+
+.elsewhere-section {
+  margin-bottom: 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.social-links a {
+  color: var(--ink);
+  text-decoration: none;
+
+  font-size: 0.95rem;
+
+  border-bottom:
+    1px solid transparent;
+
+  transition:
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.social-links a:hover {
+  border-color: currentColor;
+  opacity: 0.7;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+  min-height: 88px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7vw;
+
+  background: var(--paper-dark);
+
+  color: var(--green);
+
+  font-size: 1.05rem;
+}
+
+.back-top {
+  color: var(--green);
+  text-decoration: none;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .site-header {
+    padding: 0 24px;
+  }
+
+  .main-nav {
+    gap: 22px;
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+  }
+
+
+  .about-hero {
+    min-height: 820px;
+
+    padding:
+      45px
+      24px
+      100px;
+  }
+
+  .about-title-row {
+    height: 180px;
+  }
+
+  .about-title {
+    font-size: clamp(4.5rem, 18vw, 7rem);
+  }
+
+  .about-title-left {
+    left: 0;
+  }
+
+  .about-title-right {
+    top: 90px;
+    right: 0;
+  }
+
+
+  .about-intro {
+    min-height: 480px;
+  }
+
+
+  .about-photo-wrap {
+    left: 5%;
+    top: 25px;
+
+    width: 210px;
+    height: 270px;
+  }
+
+
+  .name-area {
+    left: 42%;
+    top: 60px;
+  }
+
+  .name-tag {
+    font-size: 2.25rem;
+  }
+
+  .tag-elle {
+    top: 70px;
+  }
+
+  .tag-maikel {
+    left: 0;
+    top: 190px;
+  }
+
+  .tag-kel {
+    top: 245px;
+  }
+
+
+  .find-out-link {
+    bottom: 35px;
+  }
+
+
+  .about-body {
+    padding:
+      90px
+      24px
+      100px;
+  }
+
+  .about-body::before {
+    top: -65px;
+    height: 130px;
+  }
+
+
+  .tools-grid {
+    gap: 30px;
+  }
+
+
+  .site-footer {
+    padding: 24px;
+
+    gap: 20px;
+
+    font-size: 0.9rem;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .site-header {
+    height: auto;
+
+    padding:
+      20px
+      22px;
+
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    gap: 13px;
+  }
+
+
+  .about-hero {
+    min-height: 900px;
+  }
+
+
+  .about-photo-wrap {
+    width: 180px;
+    height: 230px;
+
+    left: 1%;
+  }
+
+
+  .name-area {
+    left: 44%;
+  }
+
+  .name-tag {
+    font-size: 1.9rem;
+  }
+
+
+  .tag-michelle {
+    left: 0;
+  }
+
+  .tag-elle {
+    right: -5%;
+  }
+
+  .tag-maikel {
+    left: -12%;
+  }
+
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
