@@ -8,83 +8,26 @@
 
   <title>About — DSCVRMI</title>
 
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet">
 
+  <!-- SHARED CSS: NAVBAR + FOOTER -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ABOUT PAGE CSS -->
   <style>
 
     /* =====================================
-       COLORS & BASE
+       ABOUT PAGE VARIABLES
     ===================================== */
 
     :root {
-      --abt-paper: #F5F0E6;
-      --abt-paper-dark: #E9E1D3;
-      --abt-green: #244B3A;
       --abt-sage: #A7BE89;
-      --abt-ink: #222222;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--abt-paper);
-      color: var(--abt-ink);
-      font-family: "Inter", sans-serif;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-    }
-
-
-    /* =====================================
-       NAVIGATION
-    ===================================== */
-
-    .abt-header {
-      height: 76px;
-      padding: 0 7%;
-      background: var(--abt-paper-dark);
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .abt-logo {
-      font-size: 21px;
-      font-weight: 700;
-      color: var(--abt-green);
-      text-decoration: none;
-    }
-
-    .abt-nav {
-      display: flex;
-      align-items: center;
-      gap: 52px;
-    }
-
-    .abt-nav a {
-      font-size: 19px;
-      text-decoration: none;
-      color: var(--abt-green);
-      transition: opacity 0.2s ease;
-    }
-
-    .abt-nav a:hover {
-      opacity: 0.6;
     }
 
 
@@ -96,12 +39,15 @@
       position: relative;
       width: 100%;
       max-width: 1300px;
-      height: 730px;
+      height: 535px;
       margin: 0 auto;
-      padding: 45px 5%;
+      padding: 45px 5% 35px;
     }
 
-    /* TITLE */
+
+    /* =====================================
+       HERO TITLE
+    ===================================== */
 
     .abt-title-area {
       position: relative;
@@ -112,39 +58,45 @@
 
     .abt-title {
       margin: 0;
-      font-family: "Nanum Pen Script", cursive;
+
+      font-family: var(--hand);
       font-weight: 400;
       font-size: clamp(76px, 8.5vw, 125px);
       line-height: 1;
-      color: var(--abt-green);
+
+      color: var(--green);
       white-space: nowrap;
     }
 
 
     /* =====================================
-       COLLAGE
+       HERO COLLAGE
     ===================================== */
 
     .abt-collage {
       position: relative;
       width: 100%;
       max-width: 1080px;
-      height: 530px;
+      height: 350px;
       margin: 5px auto 0;
     }
 
 
-    /* PHOTO */
+    /* =====================================
+       PORTRAIT PHOTO
+    ===================================== */
 
     .abt-photo-frame {
       position: absolute;
+
       left: 4%;
-      top: 48px;
+      top: 35px;
 
       width: 255px;
       height: 310px;
 
       background: #d9d9d9;
+
       transform: rotate(-15deg);
       overflow: hidden;
 
@@ -157,6 +109,7 @@
 
       object-fit: cover;
       object-position: center 30%;
+
       display: block;
     }
 
@@ -169,7 +122,7 @@
       position: absolute;
 
       right: 4%;
-      top: 50px;
+      top: 35px;
 
       width: 410px;
       height: 250px;
@@ -181,18 +134,16 @@
       position: absolute;
       display: inline-block;
 
-      background: var(--abt-paper-dark);
+      background: var(--paper-dark);
       padding: 4px 15px 6px;
 
-      color: var(--abt-green);
+      color: var(--green);
 
-      font-family: "Nanum Pen Script", cursive;
+      font-family: var(--hand);
       font-size: 43px;
       line-height: 1;
 
       white-space: nowrap;
-
-      transition: transform 0.2s ease;
     }
 
     .abt-michelle {
@@ -221,44 +172,6 @@
 
 
     /* =====================================
-       ILLUSTRATION CIRCLE
-    ===================================== */
-
-    .abt-illustration-circle {
-      position: absolute;
-
-      left: 50%;
-      bottom: 38px;
-
-      transform: translateX(-50%);
-
-      width: 265px;
-      height: 265px;
-
-      border-radius: 50%;
-      background: var(--abt-paper-dark);
-
-      overflow: hidden;
-      z-index: 1;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .abt-illustration {
-  width: 125%;
-  height: 125%;
-  max-width: none;
-  max-height: none;
-  object-fit: cover;
-  object-position: center;
-  flex-shrink: 0;
-  display: block;
-}
-
-
-    /* =====================================
        DECORATIVE ASTERISKS
     ===================================== */
 
@@ -266,10 +179,10 @@
       position: absolute;
       display: block;
 
-      font-family: "Nanum Pen Script", cursive;
+      font-family: var(--hand);
       font-weight: 400;
 
-      color: var(--abt-green);
+      color: var(--green);
       line-height: 1;
 
       pointer-events: none;
@@ -279,35 +192,35 @@
     }
 
     .abt-star-one {
-      top: 175px;
+      top: 155px;
       left: 3%;
       font-size: 48px;
       transform: rotate(-15deg);
     }
 
     .abt-star-two {
-      top: 215px;
+      top: 200px;
       right: 3%;
       font-size: 38px;
       transform: rotate(18deg);
     }
 
     .abt-star-three {
-      top: 405px;
-      left: 34%;
+      top: 385px;
+      left: 36%;
       font-size: 37px;
       transform: rotate(12deg);
     }
 
     .abt-star-four {
-      top: 475px;
+      top: 410px;
       right: 7%;
       font-size: 50px;
       transform: rotate(-18deg);
     }
 
     .abt-star-five {
-      top: 600px;
+      top: 465px;
       left: 12%;
       font-size: 32px;
       transform: rotate(15deg);
@@ -332,7 +245,7 @@
       width: 100%;
       background: var(--abt-sage);
 
-      margin-top: 85px;
+      margin-top: 105px;
       padding: 105px 24px 110px;
     }
 
@@ -375,7 +288,7 @@
     }
 
     .abt-block h2 {
-      font-family: "Nanum Pen Script", cursive;
+      font-family: var(--hand);
       font-size: 43px;
       font-weight: 400;
 
@@ -387,6 +300,7 @@
     }
 
     .abt-block p {
+      color: var(--ink);
       font-size: 15px;
       line-height: 1.6;
       margin: 0 0 15px;
@@ -394,7 +308,7 @@
 
 
     /* =====================================
-       TOOLS
+       SOFTWARE & GEAR
     ===================================== */
 
     .abt-tools {
@@ -410,6 +324,7 @@
       margin: 0;
       padding-left: 22px;
 
+      color: var(--ink);
       font-size: 15px;
       line-height: 1.6;
     }
@@ -427,6 +342,7 @@
     }
 
     .abt-socials a {
+      color: var(--ink);
       text-decoration: none;
       font-size: 15px;
 
@@ -442,162 +358,120 @@
       border-bottom-color: currentColor;
     }
 
-    /* =====================================
-   FLOATING FISH DECORATIONS
-===================================== */
-
-.abt-fish-decor {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.abt-fish {
-  position: absolute;
-  display: block;
-  color: var(--abt-paper);
-  font-family: "Noto Sans Egyptian Hieroglyphs", serif;
-  line-height: 1;
-  opacity: 0.65;
-}
-
-/* LEFT SIDE */
-
-.fish-1 {
-  top: 8%;
-  left: 5%;
-  font-size: 55px;
-  transform: rotate(-15deg);
-}
-
-.fish-2 {
-  top: 26%;
-  left: 13%;
-  font-size: 38px;
-  transform: rotate(18deg);
-}
-
-.fish-3 {
-  top: 46%;
-  left: 4%;
-  font-size: 65px;
-  transform: rotate(-8deg);
-}
-
-.fish-4 {
-  top: 69%;
-  left: 12%;
-  font-size: 42px;
-  transform: rotate(25deg);
-}
-
-.fish-5 {
-  top: 87%;
-  left: 5%;
-  font-size: 52px;
-  transform: rotate(-20deg);
-}
-
-/* RIGHT SIDE */
-
-.fish-6 {
-  top: 15%;
-  right: 7%;
-  font-size: 50px;
-  transform: rotate(12deg);
-}
-
-.fish-7 {
-  top: 35%;
-  right: 13%;
-  font-size: 60px;
-  transform: rotate(-18deg);
-}
-
-.fish-8 {
-  top: 54%;
-  right: 5%;
-  font-size: 37px;
-  transform: rotate(20deg);
-}
-
-.fish-9 {
-  top: 74%;
-  right: 12%;
-  font-size: 56px;
-  transform: rotate(-12deg);
-}
-
-.fish-10 {
-  top: 92%;
-  right: 6%;
-  font-size: 43px;
-  transform: rotate(15deg);
-}
-
-/* SMALL SCREENS */
-
-@media (max-width: 900px) {
-  .abt-fish {
-    font-size: 30px;
-    opacity: 0.4;
-  }
-
-  .fish-2,
-  .fish-4,
-  .fish-7,
-  .fish-9 {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .abt-fish {
-    font-size: 24px;
-    opacity: 0.3;
-  }
-
-  .fish-3,
-  .fish-8 {
-    display: none;
-  }
-}
 
     /* =====================================
-       FOOTER
+       FLOATING FISH DECORATIONS
     ===================================== */
 
-    .abt-footer {
-      padding: 24px 7%;
+    .abt-fish-decor {
+      position: absolute;
+      inset: 0;
 
-      background: var(--abt-paper-dark);
+      pointer-events: none;
+      overflow: hidden;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      gap: 20px;
-
-      color: var(--abt-green);
-      font-size: 19px;
+      z-index: 0;
     }
 
-    .abt-footer a {
-      text-decoration: none;
+    .abt-fish {
+      position: absolute;
+      display: block;
+
+      color: var(--paper);
+
+      font-family: "Noto Sans Egyptian Hieroglyphs", serif;
+      line-height: 1;
+
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+
+    /* LEFT SIDE */
+
+    .fish-1 {
+      top: 8%;
+      left: 5%;
+      font-size: 55px;
+      transform: rotate(-15deg);
+    }
+
+    .fish-2 {
+      top: 26%;
+      left: 13%;
+      font-size: 38px;
+      transform: rotate(18deg);
+    }
+
+    .fish-3 {
+      top: 46%;
+      left: 4%;
+      font-size: 65px;
+      transform: rotate(-8deg);
+    }
+
+    .fish-4 {
+      top: 69%;
+      left: 12%;
+      font-size: 42px;
+      transform: rotate(25deg);
+    }
+
+    .fish-5 {
+      top: 87%;
+      left: 5%;
+      font-size: 52px;
+      transform: rotate(-20deg);
+    }
+
+
+    /* RIGHT SIDE */
+
+    .fish-6 {
+      top: 15%;
+      right: 7%;
+      font-size: 50px;
+      transform: rotate(12deg);
+    }
+
+    .fish-7 {
+      top: 35%;
+      right: 13%;
+      font-size: 60px;
+      transform: rotate(-18deg);
+    }
+
+    .fish-8 {
+      top: 54%;
+      right: 5%;
+      font-size: 37px;
+      transform: rotate(20deg);
+    }
+
+    .fish-9 {
+      top: 74%;
+      right: 12%;
+      font-size: 56px;
+      transform: rotate(-12deg);
+    }
+
+    .fish-10 {
+      top: 92%;
+      right: 6%;
+      font-size: 43px;
+      transform: rotate(15deg);
     }
 
 
     /* =====================================
-       TABLET
+       TABLET RESPONSIVE
     ===================================== */
 
     @media (max-width: 900px) {
 
       .abt-hero {
-        height: 765px;
-        padding: 45px 4%;
+        height: 550px;
+        padding: 45px 4% 35px;
       }
 
       .abt-title {
@@ -605,12 +479,12 @@
       }
 
       .abt-collage {
-        height: 560px;
+        height: 370px;
       }
 
       .abt-photo-frame {
         left: 5%;
-        top: 65px;
+        top: 45px;
 
         width: 220px;
         height: 275px;
@@ -618,7 +492,7 @@
 
       .abt-names {
         right: 3%;
-        top: 70px;
+        top: 55px;
 
         width: 310px;
         height: 230px;
@@ -636,58 +510,34 @@
         right: 0;
       }
 
-      .abt-illustration-circle {
-        width: 230px;
-        height: 230px;
-        bottom: 5px;
-      }
-
-      .abt-star-one {
-        left: 2%;
-      }
-
-      .abt-star-three {
-        left: 38%;
-      }
-
-      .abt-star-four {
-        right: 3%;
-      }
-
       .abt-green-section {
-        margin-top: 75px;
+        margin-top: 90px;
       }
+
+      .abt-fish {
+        font-size: 30px;
+        opacity: 0.4;
+      }
+
+      .fish-2,
+      .fish-4,
+      .fish-7,
+      .fish-9 {
+        display: none;
+      }
+
     }
 
 
     /* =====================================
-       MOBILE
+       MOBILE RESPONSIVE
     ===================================== */
 
-    @media (max-width: 600px) {
-
-      .abt-header {
-        height: auto;
-        min-height: 75px;
-        padding: 18px 20px;
-        gap: 12px;
-      }
-
-      .abt-logo {
-        font-size: 17px;
-      }
-
-      .abt-nav {
-        gap: 15px;
-      }
-
-      .abt-nav a {
-        font-size: 14px;
-      }
+    @media (max-width: 650px) {
 
       .abt-hero {
-        height: 880px;
-        padding: 38px 20px 70px;
+        height: 765px;
+        padding: 38px 20px 45px;
       }
 
       .abt-title {
@@ -696,9 +546,10 @@
       }
 
       .abt-collage {
-        height: 710px;
+        height: 600px;
         margin-top: 20px;
       }
+
 
       /* PHOTO */
 
@@ -712,12 +563,13 @@
         transform: translateX(-50%) rotate(-12deg);
       }
 
+
       /* NAMES */
 
       .abt-names {
         left: 50%;
         right: auto;
-        top: 315px;
+        top: 310px;
 
         transform: translateX(-50%);
 
@@ -750,14 +602,6 @@
         top: 90px;
       }
 
-      /* ILLUSTRATION */
-
-      .abt-illustration-circle {
-        width: 200px;
-        height: 200px;
-
-        bottom: 10px;
-      }
 
       /* STARS */
 
@@ -797,10 +641,11 @@
         font-size: 23px;
       }
 
+
       /* GREEN SECTION */
 
       .abt-green-section {
-        margin-top: 65px;
+        margin-top: 75px;
         padding: 75px 24px 85px;
       }
 
@@ -808,6 +653,7 @@
         top: -70px;
         height: 115px;
       }
+
 
       /* CONTENT */
 
@@ -839,46 +685,63 @@
         font-size: 13px;
       }
 
-      .abt-footer {
-        padding: 22px;
-        font-size: 13px;
+
+      /* FISH */
+
+      .abt-fish {
+        font-size: 24px;
+        opacity: 0.3;
       }
+
+      .fish-3,
+      .fish-8 {
+        display: none;
+      }
+
     }
 
+
+    /* =====================================
+       VERY SMALL SCREENS
+    ===================================== */
+
     @media (max-width: 380px) {
-      .abt-nav {
-        gap: 9px;
+
+      .abt-title {
+        font-size: 11.4vw;
       }
 
-      .abt-logo {
-        font-size: 15px;
+      .abt-names {
+        width: 285px;
       }
 
-      .abt-nav a {
-        font-size: 12px;
+      .abt-tag {
+        font-size: 29px;
       }
+
     }
 
   </style>
+
 </head>
 
 
 <body id="top">
 
   <!-- =====================================
-       NAVIGATION
+       NAVBAR — SAME AS HOMEPAGE
   ===================================== -->
 
-  <header class="abt-header">
+  <header class="site-header">
 
-    <a href="index.html" class="abt-logo">
-      DSCVRMI
+    <a class="brand" href="index.html">
+      DSCVRMI<span class="brand-dot">.</span>
     </a>
 
-    <nav class="abt-nav">
+    <nav>
       <a href="works.html">works</a>
       <a href="about.html" aria-current="page">about</a>
-      <a href="contact.html">contact</a>
+      <a href="index.html#contact">contact</a>
     </nav>
 
   </header>
@@ -924,24 +787,13 @@
         </div>
 
 
-        <!-- NICKNAMES -->
+        <!-- NICKNAME STICKY NOTES -->
 
         <div class="abt-names">
           <span class="abt-tag abt-michelle">michelle</span>
           <span class="abt-tag abt-elle">elle</span>
           <span class="abt-tag abt-maikel">maikel</span>
           <span class="abt-tag abt-kel">kel</span>
-        </div>
-
-
-        <!-- ILLUSTRATION CIRCLE -->
-
-        <div class="abt-illustration-circle">
-          <img
-            class="abt-illustration"
-            src="persona illus.png"
-            alt="Illustration of Michelle"
-          >
         </div>
 
       </div>
@@ -957,24 +809,24 @@
 
       <!-- FLOATING FISH DECORATIONS -->
 
-<div class="abt-fish-decor" aria-hidden="true">
+      <div class="abt-fish-decor" aria-hidden="true">
 
-  <span class="abt-fish fish-1">𓆝</span>
-  <span class="abt-fish fish-2">𓆟</span>
-  <span class="abt-fish fish-3">𓆞</span>
-  <span class="abt-fish fish-4">𓆝</span>
-  <span class="abt-fish fish-5">𓆟</span>
+        <span class="abt-fish fish-1">𓆝</span>
+        <span class="abt-fish fish-2">𓆟</span>
+        <span class="abt-fish fish-3">𓆞</span>
+        <span class="abt-fish fish-4">𓆝</span>
+        <span class="abt-fish fish-5">𓆟</span>
 
-  <span class="abt-fish fish-6">𓆞</span>
-  <span class="abt-fish fish-7">𓆝</span>
-  <span class="abt-fish fish-8">𓆟</span>
-  <span class="abt-fish fish-9">𓆞</span>
-  <span class="abt-fish fish-10">𓆝</span>
+        <span class="abt-fish fish-6">𓆞</span>
+        <span class="abt-fish fish-7">𓆝</span>
+        <span class="abt-fish fish-8">𓆟</span>
+        <span class="abt-fish fish-9">𓆞</span>
+        <span class="abt-fish fish-10">𓆝</span>
 
-</div>
+      </div>
+
 
       <div class="abt-content">
-
 
         <!-- LITTLE ABOUT ME -->
 
@@ -1098,10 +950,10 @@
 
 
   <!-- =====================================
-       FOOTER
+       FOOTER — SAME AS HOMEPAGE
   ===================================== -->
 
-  <footer class="abt-footer">
+  <footer class="site-footer">
 
     <span>© 2026 DSCVRMI</span>
 
