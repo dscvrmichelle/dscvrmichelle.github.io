@@ -1,323 +1,208 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>About — DSCVRMI</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap"
+    rel="stylesheet"
+  >
 
-  <link rel="stylesheet" href="style.css?v=11">
-
-  <style>
-    /* DSCVRMI — ABOUT PAGE */
-
-    .about-page {
-      padding: 65px 0 90px;
-    }
-
-    .about-page h1 {
-      font-family: 'Inter', sans-serif;
-      color: var(--green);
-      font-size: clamp(34px, 5vw, 54px);
-      font-weight: 400;
-      letter-spacing: -1.5px;
-      line-height: 1.2;
-      margin: 0 0 35px;
-    }
-
-    .about-intro {
-      display: grid;
-      grid-template-columns: 270px minmax(0, 1fr);
-      gap: 55px;
-      align-items: start;
-    }
-
-    .about-portrait {
-      padding: 13px;
-      background: var(--paper-dark);
-    }
-
-    .about-portrait img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .about-intro-text {
-      max-width: 720px;
-    }
-
-    .about-intro-text h2 {
-      font-family: 'Nanum Pen Script', cursive;
-      font-size: 43px;
-      font-weight: 400;
-      line-height: 1;
-      margin: 0 0 20px;
-    }
-
-    .about-page p {
-      font-size: 15px;
-      line-height: 1.8;
-      margin: 0 0 18px;
-    }
-
-    .about-divider {
-      border: 0;
-      border-top: 1px solid var(--paper-dark);
-      margin: 55px 0;
-    }
-
-    .about-block {
-      max-width: 850px;
-    }
-
-    .about-block h2 {
-      margin-bottom: 20px;
-    }
-
-    .interest-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .interest-tags span {
-      background: var(--paper-dark);
-      padding: 9px 15px;
-      color: var(--green);
-      font-size: 13px;
-    }
-
-    .about-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-top: 25px;
-    }
-
-    .about-links a {
-      color: var(--green);
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .about-links a:hover {
-      text-decoration: underline;
-    }
-
-    .about-bottom {
-      margin-top: 85px;
-    }
-
-    .about-bottom a {
-      color: var(--green);
-      font-size: 15px;
-    }
-
-    
-.social-heading {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--green);
-  margin: 30px 0 12px;
-}
-
-.about-links {
-  margin-top: 0;
-}
-
-    @media (max-width: 700px) {
-      .about-page {
-        padding: 40px 0 65px;
-      }
-
-      .about-page h1 {
-        margin-bottom: 25px;
-      }
-
-      .about-intro {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .about-portrait {
-        width: min(250px, 100%);
-      }
-
-      .about-page p {
-        font-size: 14px;
-      }
-
-      .about-divider {
-        margin: 40px 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body id="top">
-  <div class="page-wrapper">
+<body>
 
-    <!-- HEADER -->
-    <header class="site-header">
-      <a href="index.html" class="logo">DSCVRMI</a>
+  <header class="site-header">
+    <a href="index.html" class="logo">DSCVRMI</a>
 
-      <nav aria-label="Main navigation">
-        <a href="works.html">works</a>
-        <a href="about.html" aria-current="page">about</a>
-        <a href="index.html#contact">contact</a>
-      </nav>
-    </header>
+    <nav class="main-nav">
+      <a href="works.html">works</a>
+      <a href="about.html" class="active">about</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </header>
 
-    <main class="about-page">
 
-      <h1>a little more about me</h1>
+  <main>
 
-      <!-- INTRODUCTION -->
-      <section class="about-intro">
+    <!-- HERO -->
+    <section class="about-hero">
 
-        <div class="about-portrait">
-          <img
-            src="michelle.jpg"
-            alt="Portrait of Michelle">
-        </div>
+      <div class="about-title-row">
+        <h1 class="about-title about-title-left">
+          you can
+        </h1>
 
-        <div class="about-intro-text">
-          <h2>hi again!</h2>
-
-          <p>
-            I'm Michelle, a Multimedia Production student
-            based in Germany, interested in bringing ideas
-            to life through different forms of creative expression.
-          </p>
-
-          <p>
-            I enjoy the process of turning an initial thought
-            into something tangible. Whether it's developing
-            a visual narrative, experimenting with colours
-            and materials, or figuring out how to communicate
-            an idea through a completely different medium,
-            I like exploring the possibilities before settling
-            on a direction.
-          </p>
-
-          <p>
-            My work moves between publications, filmmaking,
-            digital design, and other creative experiments.
-            Rather than sticking to one particular medium,
-            I'm interested in finding the approach that
-            best serves each idea.
-          </p>
-        </div>
-
-      </section>
-
-      <hr class="about-divider">
-
-      <!-- CREATIVE APPROACH -->
-      <section class="about-block">
-        <h2>how I approach things</h2>
-
-        <p>
-          What I enjoy most about creating is the hands-on
-          process of bringing an idea to life. I like figuring
-          things out as I go, experimenting with different
-          techniques, and learning whatever I need to make
-          something work.
-        </p>
-
-        <p>
-          Sometimes my ideas are a little more ambitious
-          than my technical abilities can keep up with,
-          but I think that's part of what makes the process
-          interesting. Each project gives me a reason
-          to learn something new, improve what I already know,
-          and get a little closer to what I originally imagined.
-        </p>
-      </section>
-
-      <hr class="about-divider">
-
-      <!-- CREATIVE INTERESTS -->
-      <section class="about-block">
-        <h2>creative interests</h2>
-
-        <p>
-          I enjoy working across disciplines and exploring
-          how different mediums can shape the way an idea
-          is experienced.
-        </p>
-
-        <div class="interest-tags">
-          <span>visual storytelling</span>
-          <span>editorial design</span>
-          <span>filmmaking</span>
-          <span>3D modelling</span>
-          <span>culinary experiments</span>
-          <span>miniature making</span>
-        </div>
-      </section>
-
-      <hr class="about-divider">
-
-      
-<!-- FIND ME ELSEWHERE -->
-<section class="about-block">
-  <h2>find me elsewhere</h2>
-
-  <p>
-    Feel free to reach out or take a peek at
-    what I'm up to outside this little corner
-    of the internet.
-  </p>
-
-  <div class="about-links">
-    <a href="https://www.linkedin.com/in/michelle-artalim-069a4229b/"
-       target="_blank"
-       rel="noopener noreferrer">
-      &#8599; linkedin
-    </a>
-
-    <a href="https://www.instagram.com/37maikel/"
-       target="_blank"
-       rel="noopener noreferrer">
-      &#8599; instagram
-    </a>
-
-    <a href="https://wednesdayelle.blogspot.com/"
-       target="_blank"
-       rel="noopener noreferrer">
-      &#8599; poetry blog
-    </a>
-
-    <a href="index.html#contact">
-      &#8599; get in touch
-    </a>
-  </div>
-</section>
-
-      <!-- BACK HOME -->
-      <div class="about-bottom">
-        <a href="index.html">← back to home</a>
+        <h1 class="about-title about-title-right">
+          call me
+        </h1>
       </div>
 
-    </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <span>© 2026 DSCVRMI</span>
-      <a href="#top">↑ BACK TO THE TOP</a>
-    </footer>
+      <div class="about-intro">
 
-  </div>
+        <div class="about-photo-wrap">
+          <!-- GANTI SRC -->
+          <img
+            src="michelle.jpg"
+            alt="Portrait"
+            class="about-photo"
+          >
+        </div>
+
+
+        <div class="name-area">
+
+          <span class="name-tag tag-michelle">
+            michelle
+          </span>
+
+          <span class="name-tag tag-elle">
+            elle
+          </span>
+
+          <span class="name-tag tag-maikel">
+            maikel
+          </span>
+
+          <span class="name-tag tag-kel">
+            kel
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- GREEN ABOUT AREA -->
+    <section class="about-body" id="little-about-me">
+
+      <div class="about-content">
+
+
+        <section class="about-section">
+          <h2>little about me</h2>
+
+          <p>I'm Michelle, a Multimedia Production student based in Germany, interested in bringing ideas to life through different forms of creative expression.
+          </p>
+
+          <p>
+            I enjoy the process of turning an initial thought into something tangible. 
+            Whether it's developing a visual narrative, experimenting with colours and materials, 
+            or figuring out how to communicate an idea through a completely different medium, 
+            I like exploring the possibilities before settling on a direction.
+          </p>
+        </section>
+
+
+
+        <section class="about-section">
+          <h2>how i approach things</h2>
+
+          <p>
+            I usually begin with a question, an observation, or something
+            that makes me curious. From there, I like collecting references,
+            finding connections and figuring out how the idea should exist
+            visually.
+          </p>
+
+          <p>
+            I’m less interested in committing myself to one medium than in
+            choosing whatever format communicates the concept most clearly.
+          </p>
+        </section>
+
+
+
+        <section class="about-section tools-section">
+
+          <h2>stuff that i use</h2>
+
+          <div class="tools-grid">
+
+            <ul>
+              <li>Adobe InDesign</li>
+              <li>Adobe Premiere Pro</li>
+              <li>Adobe After Effect</li>
+              <li>Adobe Photoshop</li>
+              <li>Figma</li>
+              <li>Canva</li>
+            </ul>
+
+            <ul>
+              <li>DJI Action 4</li>
+              <li>Sony α6400</li>
+              <li>HTML / CSS</li>
+              <li>GitHub</li>
+              <li>Unity</li>
+              <li>Womp</li>
+            </ul>
+
+          </div>
+
+        </section>
+
+
+
+        <section class="about-section elsewhere-section">
+
+          <h2>find me elsewhere</h2>
+
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/michelle-artalim-069a4229b/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin
+            </a>
+
+            <a
+              href="https://www.instagram.com/37maikel/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              instagram
+            </a>
+
+            <a href="https://wednesdayelle.blogspot.com/" target="_blank">
+              poetry blog
+            </a>
+
+            <a href="mailto:artaastra@gmail.com">
+              email
+            </a>
+          </div>
+
+        </section>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <footer class="site-footer">
+    <span>© 2026 DSCVRMI</span>
+
+    <a href="#" class="back-top">
+      ↑ BACK TO THE TOP
+    </a>
+  </footer>
+
+
 </body>
 </html>
