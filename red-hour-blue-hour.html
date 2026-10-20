@@ -7,170 +7,440 @@
 
   <title>Red Hour Blue Hour — DSCVRMI</title>
 
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
-  <!-- EXISTING WEBSITE CSS -->
-  <link rel="stylesheet" href="style.css?v=7">
+  <!-- GLOBAL CSS -->
+  <link rel="stylesheet" href="style.css?v=8">
 
-  <!-- CSS SPECIFIC TO THIS PROJECT -->
+  <!-- PAGE-SPECIFIC CSS -->
   <style>
-    .filter-section {
-      margin-top: 55px;
+
+    /* ==============================
+       PAGE LAYOUT
+    ============================== */
+
+    .rh-page {
+      width: calc(100% - 80px);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 0 90px;
+      box-sizing: border-box;
     }
 
-    .filter-intro {
-      max-width: 850px;
+    /* ==============================
+       PROJECT HEADER
+    ============================== */
+
+    .rh-header {
+      margin-bottom: 40px;
+    }
+
+    .rh-back {
+      display: inline-block;
+      margin-bottom: 50px;
+      color: var(--green, #244B3A);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .rh-back:hover {
+      text-decoration: underline;
+    }
+
+    .rh-category {
+      margin: 0 0 15px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green-accent, #357A4E);
+    }
+
+    .rh-header h1 {
+      margin: 0;
+      font-size: clamp(36px, 4vw, 54px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      font-weight: 700;
+      color: var(--green, #244B3A);
+    }
+
+    .rh-subtitle {
+      max-width: 540px;
+      margin: 18px 0 0;
       font-size: 14px;
-      line-height: 1.75;
-      margin-bottom: 22px;
+      line-height: 1.7;
+      color: #626862;
     }
 
-    .filter-controls {
+    /* ==============================
+       INTERACTIVE HEYZINE
+    ============================== */
+
+    .rh-showcase {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto 110px;
+    }
+
+    .rh-flipbook {
+      width: 100%;
+      height: 480px;
+      background: var(--paper-dark, #E9E1D3);
+      border: 1px solid rgba(36, 75, 58, 0.15);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .rh-flipbook iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ==============================
+       TWO-COLUMN SECTIONS
+    ============================== */
+
+    .rh-section {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      align-items: start;
+      margin-bottom: 110px;
+    }
+
+    .rh-section-label {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green-accent, #357A4E);
+    }
+
+    .rh-section-heading h2 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      color: var(--green, #244B3A);
+    }
+
+    .rh-section-text {
+      max-width: 590px;
+    }
+
+    .rh-section-text p {
+      margin: 0 0 22px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--ink, #222);
+    }
+
+    .rh-section-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .rh-about .rh-section-text p:first-child {
+      font-weight: 600;
+      color: var(--green, #244B3A);
+    }
+
+    /* ==============================
+       COLOUR EXPERIMENT
+    ============================== */
+
+    .rh-experiment {
+      margin-bottom: 120px;
+    }
+
+    .rh-experiment-intro {
+      margin-bottom: 45px;
+    }
+
+    .rh-filter-area {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .rh-filter-controls {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
     }
 
-    .filter-button {
-      border: 1px solid var(--green);
+    .rh-filter-button {
+      padding: 12px 22px;
+      border: 1px solid var(--green, #244B3A);
+      border-radius: 0;
       background: transparent;
-      color: var(--green);
-      padding: 12px 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
+      color: var(--green, #244B3A);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
     }
 
-    .filter-button:hover {
-      background: var(--paper-dark);
+    .rh-filter-button:hover {
+      background: var(--paper-dark, #E9E1D3);
     }
 
-    .filter-button.is-active {
-      background: var(--green);
-      color: var(--white);
+    .rh-filter-button.is-active {
+      background: var(--green, #244B3A);
+      color: var(--white, #FFF);
     }
 
-    .filter-demo-frame {
-      background: var(--paper-dark);
+    .rh-filter-button:focus-visible {
+      outline: 2px solid var(--green-accent, #357A4E);
+      outline-offset: 3px;
+    }
+
+    /* FILTER CANVAS */
+
+    .rh-demo-frame {
+      width: 100%;
       padding: 25px;
+      background: var(--paper-dark, #E9E1D3);
       display: flex;
       justify-content: center;
       align-items: center;
+      box-sizing: border-box;
     }
 
-    .filter-demo-frame canvas {
+    .rh-demo-frame canvas {
       display: block;
       width: auto;
       max-width: 100%;
-      max-height: 700px;
+      max-height: 620px;
       height: auto;
-      background: var(--white);
+      background: #FFF;
     }
 
-    .filter-note {
+    .rh-filter-status {
+      margin: 16px 0 0;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.7;
+      color: var(--green, #244B3A);
+    }
+
+    .rh-filter-note {
+      max-width: 750px;
+      margin: 8px 0 0;
       font-size: 12px;
       line-height: 1.7;
-      margin-top: 14px;
-      color: var(--ink);
-      max-width: 750px;
+      color: #6F746E;
     }
 
-    .process-section {
-      margin-top: 55px;
+    /* ==============================
+       CREATIVE PROCESS
+    ============================== */
+
+    .rh-process {
+      margin-bottom: 110px;
     }
 
-    .process-section p {
+    .rh-process-intro {
+      margin-bottom: 45px;
+    }
+
+    .rh-storyboard {
+      width: 100%;
       max-width: 850px;
-      font-size: 14px;
-      line-height: 1.75;
+      margin: 0 auto;
+      padding: 22px;
+      background: var(--paper-dark, #E9E1D3);
+      box-sizing: border-box;
     }
 
-    @media (max-width: 600px) {
-      .filter-demo-frame {
-        padding: 10px;
+    .rh-storyboard img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #FFF;
+    }
+
+    .rh-storyboard figcaption {
+      margin-top: 15px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #626862;
+    }
+
+    /* ==============================
+       BOTTOM NAVIGATION
+    ============================== */
+
+    .rh-bottom-navigation {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 25px;
+      border-top: 1px solid rgba(36, 75, 58, 0.25);
+    }
+
+    .rh-bottom-navigation a {
+      color: var(--green, #244B3A);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .rh-bottom-navigation a:hover {
+      text-decoration: underline;
+    }
+
+    /* ==============================
+       TABLET
+    ============================== */
+
+    @media (max-width: 768px) {
+
+      .rh-page {
+        width: calc(100% - 40px);
+        padding: 40px 0 65px;
       }
 
-      .filter-button {
-        padding: 10px 13px;
+      .rh-header {
+        margin-bottom: 35px;
+      }
+
+      .rh-back {
+        margin-bottom: 45px;
+      }
+
+      .rh-header h1 {
+        font-size: clamp(32px, 7vw, 44px);
+        letter-spacing: -1px;
+      }
+
+      .rh-showcase {
+        max-width: 100%;
+        margin-bottom: 75px;
+      }
+
+      .rh-flipbook {
+        height: 400px;
+      }
+
+      .rh-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 75px;
+      }
+
+      .rh-experiment,
+      .rh-process {
+        margin-bottom: 80px;
+      }
+
+      .rh-experiment-intro,
+      .rh-process-intro {
+        margin-bottom: 35px;
+      }
+
+      .rh-demo-frame {
+        padding: 15px;
+      }
+
+      .rh-storyboard {
+        padding: 15px;
+      }
+    }
+
+    /* ==============================
+       MOBILE
+    ============================== */
+
+    @media (max-width: 480px) {
+
+      .rh-category {
+        letter-spacing: 1.2px;
+        line-height: 1.7;
+      }
+
+      .rh-flipbook {
+        height: 300px;
+      }
+
+      .rh-filter-controls {
+        gap: 8px;
+      }
+
+      .rh-filter-button {
+        padding: 10px 12px;
         font-size: 12px;
       }
 
-      .filter-demo-frame canvas {
+      .rh-demo-frame {
+        padding: 10px;
+      }
+
+      .rh-demo-frame canvas {
         max-height: none;
         width: 100%;
       }
+
+      .rh-storyboard {
+        padding: 10px;
+      }
     }
-
-    
-/* STORYBOARD */
-
-.storyboard-figure {
-  margin: 28px 0 0;
-  padding: 18px;
-  background: var(--paper-dark);
-}
-
-.storyboard-figure img {
-  display: block;
-  width: 100%;
-  max-width: 700px;
-  height: auto;
-  margin: 0 auto;
-  background: var(--white);
-}
-
-.storyboard-figure figcaption {
-  max-width: 700px;
-  margin: 12px auto 0;
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--ink);
-}
-
-@media (max-width: 600px) {
-  .storyboard-figure {
-    padding: 10px;
-  }
-}
 
   </style>
 </head>
 
 <body id="top">
 
-  <div class="page-wrapper">
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      DSCVRMI<span class="brand-dot">.</span>
+    </a>
 
-    <!-- HEADER -->
-    <header class="site-header">
-      <a href="index.html" class="logo">DSCVRMI</a>
+    <nav aria-label="Main navigation">
+      <a href="works.html">works</a>
+      <a href="about.html">about</a>
+      <a href="index.html#contact">contact</a>
+    </nav>
+  </header>
 
-      <nav aria-label="Main navigation">
-        <a href="index.html#works">works</a>
-        <a href="index.html#about">about</a>
-        <a href="index.html#contact">contact</a>
-      </nav>
-    </header>
+  <main class="rh-page">
 
-    <main class="project-detail">
+    <!-- PROJECT HEADER -->
+    <section class="rh-header">
 
-      <!-- PROJECT HEADER -->
-      <a href="index.html#works" class="back-link">
+      <a href="works.html" class="rh-back">
         ← back to works
       </a>
 
-      <h1 class="project-title">Red Hour Blue Hour</h1>
-
-      <p class="project-meta">
-        publication / experimental zine / 2024
+      <p class="rh-category">
+        PUBLICATION / EXPERIMENTAL ZINE / 2024
       </p>
 
-      <!-- FLIPBOOK -->
-      <div class="flipbook-frame">
+      <h1>Red Hour Blue Hour</h1>
+
+      <p class="rh-subtitle">
+        An experimental publication exploring personal
+        stories through overlapping colours and hidden
+        visual layers.
+      </p>
+
+    </section>
+
+    <!-- INTERACTIVE ZINE -->
+    <section class="rh-showcase"
+             aria-label="Interactive zine preview">
+
+      <div class="rh-flipbook">
         <iframe
           src="https://heyzine.com/flip-book/fce911a8ab.html"
           title="Red Hour Blue Hour — Interactive Zine"
@@ -180,10 +450,20 @@
         </iframe>
       </div>
 
-      <!-- ABOUT THE PROJECT -->
-      <section class="project-description">
+    </section>
+
+    <!-- ABOUT THE PROJECT -->
+    <section class="rh-section rh-about">
+
+      <div class="rh-section-heading">
+        <span class="rh-section-label">
+          01 / THE STORY
+        </span>
 
         <h2>about the project</h2>
+      </div>
+
+      <div class="rh-section-text">
 
         <p>
           Red Hour Blue Hour is an experimental A5 zine
@@ -215,29 +495,45 @@
           of stories, hidden in plain sight.
         </p>
 
-      </section>
+      </div>
 
-      <!-- INTERACTIVE COLOUR EXPERIMENT -->
-      <section class="filter-section">
+    </section>
 
-        <h2>behind the colours</h2>
+    <!-- INTERACTIVE COLOUR EXPERIMENT -->
+    <section class="rh-experiment">
 
-        <p class="filter-intro">
-          The original zine was meant to be experienced
-          through transparent coloured filters.
-          Try switching between red and blue to explore
-          how different parts of the same illustration
-          become more or less visible.
-        </p>
+      <div class="rh-section rh-experiment-intro">
 
-        <div
-          class="filter-controls"
-          role="group"
-          aria-label="Colour filter selection">
+        <div class="rh-section-heading">
+          <span class="rh-section-label">
+            02 / THE EXPERIMENT
+          </span>
+
+          <h2>behind the colours</h2>
+        </div>
+
+        <div class="rh-section-text">
+          <p>
+            The original zine was meant to be experienced
+            through transparent coloured filters.
+            Try switching between red and blue to explore
+            how different parts of the same illustration
+            become more or less visible.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FILTER DEMO -->
+      <div class="rh-filter-area">
+
+        <div class="rh-filter-controls"
+             role="group"
+             aria-label="Colour filter selection">
 
           <button
             type="button"
-            class="filter-button is-active"
+            class="rh-filter-button is-active"
             data-filter="original"
             aria-pressed="true">
             original
@@ -245,7 +541,7 @@
 
           <button
             type="button"
-            class="filter-button"
+            class="rh-filter-button"
             data-filter="red"
             aria-pressed="false">
             red filter
@@ -253,7 +549,7 @@
 
           <button
             type="button"
-            class="filter-button"
+            class="rh-filter-button"
             data-filter="blue"
             aria-pressed="false">
             blue filter
@@ -261,7 +557,7 @@
 
         </div>
 
-        <div class="filter-demo-frame">
+        <div class="rh-demo-frame">
           <canvas
             id="newArrivalCanvas"
             role="img"
@@ -269,87 +565,108 @@
           </canvas>
         </div>
 
-        <p id="filterStatus" class="filter-note" aria-live="polite">
+        <p id="filterStatus"
+           class="rh-filter-status"
+           aria-live="polite">
           Original illustration — New Arrival.
         </p>
 
-        <p class="filter-note">
+        <p class="rh-filter-note">
           This is a digital approximation of the physical
           colour-filter effect. Results may differ from
           viewing the printed zine through transparent film.
         </p>
 
-      </section>
-
-      <!-- CREATIVE PROCESS -->
-      <section class="process-section">
-
-        <h2>from sketch to print</h2>
-
-        <p>
-          The project began with a storyboard connecting
-          personal experiences to visual concepts.
-          I developed the illustrations around two
-          overlapping colour layers, then experimented
-          with their reproduction in print.
-        </p>
-
-        <p>
-          Two rounds of printing tests, each featuring
-          ten different red and cyan combinations, helped
-          me understand how colour behaves differently
-          on screen and on paper.
-        </p>
-
-      </section>
-
-      
-<figure class="storyboard-figure">
-  <img
-    src="red-hour-blue-hour-storyboard.png"
-    alt="Early storyboard sketches for Red Hour Blue Hour, showing the page compositions and red-blue visual layers"
-    loading="lazy"
-  >
-
-  <figcaption>
-    Early storyboard sketches exploring the relationship
-    between personal stories, illustrations, and colour.
-  </figcaption>
-</figure>
-
-
-      <!-- PROJECT NAVIGATION -->
-      <div class="project-navigation">
-        <a href="index.html#works">← all works</a>
-        <a href="namamu-pada-semesta.html">
-          next project →
-        </a>
       </div>
 
-    </main>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <span>© 2026 DSCVRMI</span>
-      <a href="#top">↑ BACK TO THE TOP</a>
-    </footer>
+    <!-- CREATIVE PROCESS -->
+    <section class="rh-process">
 
-  </div>
+      <div class="rh-section rh-process-intro">
 
-  <!-- INTERACTIVE COLOUR FILTER SCRIPT -->
+        <div class="rh-section-heading">
+          <span class="rh-section-label">
+            03 / THE PROCESS
+          </span>
+
+          <h2>from sketch to print</h2>
+        </div>
+
+        <div class="rh-section-text">
+
+          <p>
+            The project began with a storyboard connecting
+            personal experiences to visual concepts.
+            I developed the illustrations around two
+            overlapping colour layers, then experimented
+            with their reproduction in print.
+          </p>
+
+          <p>
+            Two rounds of printing tests, each featuring
+            ten different red and cyan combinations, helped
+            me understand how colour behaves differently
+            on screen and on paper.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- STORYBOARD -->
+      <figure class="rh-storyboard">
+
+        <img
+          src="red-hour-blue-hour-storyboard.png"
+          alt="Early storyboard sketches for Red Hour Blue Hour"
+          loading="lazy">
+
+        <figcaption>
+          Early storyboard sketches exploring the
+          relationship between personal stories,
+          illustrations, and colour.
+        </figcaption>
+
+      </figure>
+
+    </section>
+
+    <!-- BACK TO WORKS -->
+    <div class="rh-bottom-navigation">
+      <a href="works.html">
+        ← explore more works
+      </a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>© 2026 DSCVRMI</span>
+    <a href="#top">↑ BACK TO THE TOP</a>
+  </footer>
+
+  <!-- INTERACTIVE COLOUR FILTER -->
   <script>
-    const canvas = document.getElementById('newArrivalCanvas');
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
 
-    const buttons = document.querySelectorAll('.filter-button');
+    const canvas = document.getElementById('newArrivalCanvas');
+    const ctx = canvas.getContext('2d', {
+      willReadFrequently: true
+    });
+
+    const buttons = document.querySelectorAll('.rh-filter-button');
     const status = document.getElementById('filterStatus');
 
     const sourceImage = new Image();
     sourceImage.src = 'New_Arrival (1).png';
 
     let originalPixels = null;
+    let currentFilter = 'original';
 
     sourceImage.onload = function () {
+
       canvas.width = sourceImage.naturalWidth;
       canvas.height = sourceImage.naturalHeight;
 
@@ -358,19 +675,28 @@
       originalPixels = ctx.getImageData(
         0, 0, canvas.width, canvas.height
       );
+
+      applyFilter(currentFilter);
     };
 
     sourceImage.onerror = function () {
       status.textContent =
-        'Image could not be loaded. Check New_Arrival.png.';
+        'Image could not be loaded. Check New_Arrival (1).png.';
     };
 
     function applyFilter(mode) {
+
+      currentFilter = mode;
+
       if (!originalPixels) return;
 
       if (mode === 'original') {
+
         ctx.putImageData(originalPixels, 0, 0);
-        status.textContent = 'Original illustration — New Arrival.';
+
+        status.textContent =
+          'Original illustration — New Arrival.';
+
         return;
       }
 
@@ -383,21 +709,24 @@
       const data = result.data;
 
       for (let i = 0; i < data.length; i += 4) {
+
         const r = data[i];
         const g = data[i + 1];
         const b = data[i + 2];
 
         if (mode === 'red') {
-          // Approximate light transmitted by a red filter.
+
           const light = r;
+
           data[i] = light;
           data[i + 1] = light * 0.20;
           data[i + 2] = light * 0.16;
         }
 
         if (mode === 'blue') {
-          // Approximate light transmitted by a blue-cyan filter.
+
           const light = 0.65 * g + 0.35 * b;
+
           data[i] = light * 0.12;
           data[i + 1] = light * 0.65;
           data[i + 2] = light;
@@ -412,7 +741,9 @@
     }
 
     buttons.forEach(button => {
+
       button.addEventListener('click', function () {
+
         buttons.forEach(btn => {
           btn.classList.remove('is-active');
           btn.setAttribute('aria-pressed', 'false');
@@ -423,7 +754,9 @@
 
         applyFilter(this.dataset.filter);
       });
+
     });
+
   </script>
 
 </body>
