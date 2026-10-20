@@ -1,134 +1,583 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>About — DSCVRMI</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap"
-    rel="stylesheet"
-  >
+  <style>
+    /* =========================
+       ABOUT PAGE ONLY
+    ========================= */
 
-  <link rel="stylesheet" href="style.css" />
+    :root {
+      --abt-paper: #F5F0E6;
+      --abt-paper-dark: #E9E1D3;
+      --abt-green: #244B3A;
+      --abt-sage: #A7BE89;
+      --abt-ink: #222222;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--abt-paper);
+      color: var(--abt-ink);
+      font-family: "Inter", sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    .abt-header {
+      height: 76px;
+      padding: 0 7%;
+      background: var(--abt-paper-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .abt-logo {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--abt-green);
+      text-decoration: none;
+    }
+
+    .abt-nav {
+      display: flex;
+      align-items: center;
+      gap: 52px;
+    }
+
+    .abt-nav a {
+      font-size: 19px;
+      text-decoration: none;
+      color: var(--abt-green);
+      transition: opacity 0.2s ease;
+    }
+
+    .abt-nav a:hover {
+      opacity: 0.6;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .abt-hero {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      min-height: 660px;
+      margin: 0 auto;
+      padding: 45px 5% 90px;
+    }
+
+    .abt-title-area {
+      position: relative;
+      height: 175px;
+    }
+
+    .abt-title {
+      position: absolute;
+      margin: 0;
+      font-family: "Nanum Pen Script", cursive;
+      font-weight: 400;
+      font-size: clamp(85px, 9vw, 130px);
+      line-height: 0.9;
+      color: var(--abt-green);
+      white-space: nowrap;
+    }
+
+    .abt-title-first {
+      top: 0;
+      left: 0;
+    }
+
+    .abt-title-second {
+      top: 72px;
+      right: 5%;
+    }
+
+    /* PHOTO + NICKNAMES */
+
+    .abt-collage {
+      position: relative;
+      height: 335px;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .abt-photo-frame {
+      position: absolute;
+      left: 3%;
+      top: 10px;
+      width: 255px;
+      height: 310px;
+      transform: rotate(-15deg);
+      background: #d9d9d9;
+      overflow: hidden;
+    }
+
+    .abt-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    /* NICKNAME CLUSTER */
+
+    .abt-names {
+      position: absolute;
+      left: 44%;
+      top: 25px;
+      width: 420px;
+      height: 270px;
+    }
+
+    .abt-tag {
+      position: absolute;
+      background: var(--abt-paper-dark);
+      padding: 3px 14px 5px;
+      color: var(--abt-green);
+      font-family: "Nanum Pen Script", cursive;
+      font-size: 43px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .abt-michelle {
+      left: 0;
+      top: 5px;
+      transform: rotate(-8deg);
+    }
+
+    .abt-elle {
+      right: 15px;
+      top: 26px;
+      transform: rotate(12deg);
+    }
+
+    .abt-maikel {
+      left: 65px;
+      top: 140px;
+      transform: rotate(13deg);
+    }
+
+    .abt-kel {
+      right: 0;
+      top: 155px;
+      transform: rotate(-14deg);
+    }
+
+    /* FIND OUT */
+
+    .abt-discover {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--abt-green);
+      font-family: "Nanum Pen Script", cursive;
+      font-size: 34px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.2s ease;
+    }
+
+    .abt-discover:hover {
+      opacity: 0.6;
+    }
+
+    /* =========================
+       GREEN ARCH
+    ========================= */
+
+    .abt-green-section {
+      position: relative;
+      isolation: isolate;
+      background: var(--abt-sage);
+      padding: 85px 24px 110px;
+      margin-top: 75px;
+    }
+
+    .abt-green-section::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -110px;
+      left: 0;
+      width: 100%;
+      height: 180px;
+      background: var(--abt-sage);
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+
+    .abt-content {
+      width: min(680px, 100%);
+      margin: 0 auto;
+    }
+
+    .abt-block {
+      margin-bottom: 60px;
+    }
+
+    .abt-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .abt-block h2 {
+      font-family: "Nanum Pen Script", cursive;
+      font-size: 43px;
+      font-weight: 400;
+      color: white;
+      text-align: center;
+      line-height: 1;
+      margin: 0 0 28px;
+    }
+
+    .abt-block p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 15px;
+    }
+
+    /* TOOLS */
+
+    .abt-tools {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .abt-tools ul {
+      margin: 0;
+      padding-left: 22px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* SOCIALS */
+
+    .abt-socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .abt-socials a {
+      text-decoration: none;
+      font-size: 15px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .abt-socials a:hover {
+      border-bottom-color: currentColor;
+    }
+
+    /* FOOTER */
+
+    .abt-footer {
+      padding: 24px 7%;
+      background: var(--abt-paper-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--abt-green);
+      font-size: 19px;
+    }
+
+    .abt-footer a {
+      text-decoration: none;
+    }
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .abt-title {
+        font-size: clamp(76px, 12vw, 110px);
+      }
+
+      .abt-title-second {
+        right: 0;
+        top: 85px;
+      }
+
+      .abt-photo-frame {
+        left: 5%;
+        width: 220px;
+        height: 285px;
+      }
+
+      .abt-names {
+        left: 43%;
+        width: 330px;
+      }
+
+      .abt-tag {
+        font-size: 37px;
+      }
+
+      .abt-maikel {
+        left: 35px;
+      }
+
+      .abt-elle {
+        right: 0;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .abt-header {
+        height: auto;
+        min-height: 75px;
+        padding: 18px 20px;
+        gap: 15px;
+      }
+
+      .abt-logo {
+        font-size: 17px;
+      }
+
+      .abt-nav {
+        gap: 15px;
+      }
+
+      .abt-nav a {
+        font-size: 14px;
+      }
+
+      .abt-hero {
+        min-height: 760px;
+        padding: 35px 20px 90px;
+      }
+
+      .abt-title-area {
+        height: 190px;
+      }
+
+      .abt-title {
+        font-size: clamp(65px, 16vw, 95px);
+      }
+
+      .abt-title-first {
+        top: 0;
+      }
+
+      .abt-title-second {
+        top: 95px;
+        right: 0;
+      }
+
+      .abt-collage {
+        height: 440px;
+      }
+
+      .abt-photo-frame {
+        left: 50%;
+        top: 10px;
+        width: 195px;
+        height: 240px;
+        transform: translateX(-50%) rotate(-12deg);
+      }
+
+      .abt-names {
+        left: 50%;
+        top: 280px;
+        width: min(340px, 100%);
+        height: 145px;
+        transform: translateX(-50%);
+      }
+
+      .abt-tag {
+        font-size: 32px;
+        padding: 3px 10px;
+      }
+
+      .abt-michelle {
+        left: 3%;
+        top: 0;
+      }
+
+      .abt-elle {
+        right: 5%;
+        top: 12px;
+      }
+
+      .abt-maikel {
+        left: 15%;
+        top: 78px;
+      }
+
+      .abt-kel {
+        right: 4%;
+        top: 85px;
+      }
+
+      .abt-discover {
+        bottom: 25px;
+        font-size: 30px;
+      }
+
+      .abt-green-section {
+        margin-top: 65px;
+        padding: 60px 24px 85px;
+      }
+
+      .abt-green-section::before {
+        top: -65px;
+        height: 105px;
+      }
+
+      .abt-block {
+        margin-bottom: 50px;
+      }
+
+      .abt-block h2 {
+        font-size: 38px;
+      }
+
+      .abt-block p {
+        font-size: 14px;
+      }
+
+      .abt-tools {
+        gap: 18px;
+      }
+
+      .abt-tools ul {
+        font-size: 13px;
+      }
+
+      .abt-footer {
+        padding: 22px;
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body id="top">
 
-  <header class="site-header">
-    <a href="index.html" class="logo">DSCVRMI</a>
+  <!-- NAVIGATION -->
 
-    <nav class="main-nav">
+  <header class="abt-header">
+    <a href="index.html" class="abt-logo">DSCVRMI</a>
+
+    <nav class="abt-nav">
       <a href="works.html">works</a>
-      <a href="about.html" class="active">about</a>
+      <a href="about.html" aria-current="page">about</a>
       <a href="contact.html">contact</a>
     </nav>
   </header>
 
-
   <main>
 
     <!-- HERO -->
-    <section class="about-hero">
 
-      <div class="about-title-row">
-        <h1 class="about-title about-title-left">
-          you can
-        </h1>
+    <section class="abt-hero">
 
-        <h1 class="about-title about-title-right">
-          call me
-        </h1>
+      <div class="abt-title-area">
+        <h1 class="abt-title abt-title-first">you can</h1>
+        <h2 class="abt-title abt-title-second">call me</h2>
       </div>
 
+      <div class="abt-collage">
 
-      <div class="about-intro">
-
-        <div class="about-photo-wrap">
-          <!-- GANTI SRC -->
+        <div class="abt-photo-frame">
           <img
+            class="abt-photo"
             src="michelle.jpg"
-            alt="Portrait"
-            class="about-photo"
+            alt="Portrait of Michelle"
           >
         </div>
 
-
-        <div class="name-area">
-
-          <span class="name-tag tag-michelle">
-            michelle
-          </span>
-
-          <span class="name-tag tag-elle">
-            elle
-          </span>
-
-          <span class="name-tag tag-maikel">
-            maikel
-          </span>
-
-          <span class="name-tag tag-kel">
-            kel
-          </span>
-
+        <div class="abt-names">
+          <span class="abt-tag abt-michelle">michelle</span>
+          <span class="abt-tag abt-elle">elle</span>
+          <span class="abt-tag abt-maikel">maikel</span>
+          <span class="abt-tag abt-kel">kel</span>
         </div>
 
       </div>
 
     </section>
 
+    <!-- GREEN CONTENT -->
 
+    <section class="abt-green-section" id="little-about-me">
 
-    <!-- GREEN ABOUT AREA -->
-    <section class="about-body" id="little-about-me">
+      <div class="abt-content">
 
-      <div class="about-content">
-
-
-        <section class="about-section">
+        <section class="abt-block">
           <h2>little about me</h2>
 
-          <p>I'm Michelle, a Multimedia Production student based in Germany, interested in bringing ideas to life through different forms of creative expression.
+          <p>
+            I'm Michelle, a multimedia production student based in Germany
+            with an interest in visual storytelling, editorial design,
+            and concept development.
           </p>
 
           <p>
-            I enjoy the process of turning an initial thought into something tangible. 
-            Whether it's developing a visual narrative, experimenting with colours and materials, 
-            or figuring out how to communicate an idea through a completely different medium, 
-            I like exploring the possibilities before settling on a direction.
+            My work moves between different formats, from zines and
+            websites to film and physical objects. I enjoy exploring
+            different mediums and figuring out which one works best
+            for the idea I'm trying to communicate.
           </p>
         </section>
 
-
-
-        <section class="about-section">
+        <section class="abt-block">
           <h2>how i approach things</h2>
 
           <p>
-            I usually begin with a question, an observation, or something
-            that makes me curious. From there, I like collecting references,
-            finding connections and figuring out how the idea should exist
-            visually.
+            Most of my ideas begin with curiosity. Sometimes it's
+            a question, sometimes a random observation, and sometimes
+            it's simply something I can't stop thinking about.
           </p>
 
           <p>
-            I’m less interested in committing myself to one medium than in
-            choosing whatever format communicates the concept most clearly.
+            I like collecting references, exploring connections,
+            and developing concepts before deciding what the final
+            outcome should look like.
           </p>
         </section>
 
-
-
-        <section class="about-section tools-section">
-
+        <section class="abt-block">
           <h2>stuff that i use</h2>
 
-          <div class="tools-grid">
+          <div class="abt-tools">
 
             <ul>
               <li>Adobe InDesign</li>
@@ -149,43 +598,29 @@
             </ul>
 
           </div>
-
         </section>
 
-
-
-        <section class="about-section elsewhere-section">
-
+        <section class="abt-block">
           <h2>find me elsewhere</h2>
 
-          <div class="social-links">
-            <a
-              href="https://www.linkedin.com/in/michelle-artalim-069a4229b/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin
+          <div class="abt-socials">
+            <a href="https://www.linkedin.com/in/michelle-artalim-069a4229b/" target="_blank" rel="noopener noreferrer">
+              &#8599; linkedin
             </a>
 
-            <a
-              href="https://www.instagram.com/37maikel/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              instagram
+            <a href="https://www.instagram.com/37maikel/" target="_blank" rel="noopener noreferrer">
+              &#8599; instagram
             </a>
 
-            <a href="https://wednesdayelle.blogspot.com/" target="_blank">
-              poetry blog
+            <a href="https://wednesdayelle.blogspot.com/" target="_blank" rel="noopener noreferrer">
+              &#8599; poetry blog
             </a>
 
             <a href="mailto:artaastra@gmail.com">
-              email
+              &#8599; email
             </a>
           </div>
-
         </section>
-
 
       </div>
 
@@ -193,16 +628,13 @@
 
   </main>
 
+  <!-- FOOTER -->
 
-
-  <footer class="site-footer">
+  <footer class="abt-footer">
     <span>© 2026 DSCVRMI</span>
 
-    <a href="#" class="back-top">
-      ↑ BACK TO THE TOP
-    </a>
+    <a href="#top">↑ BACK TO THE TOP</a>
   </footer>
-
 
 </body>
 </html>
