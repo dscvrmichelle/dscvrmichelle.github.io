@@ -4,177 +4,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>DISCOVER Michelle</title>
+  <title>DSCVRMI — Discover Michelle</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="top">
 
-  <div class="page-wrapper">
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <a class="brand" href="index.html">DSCVRMI<span class="brand-dot">.</span></a>
 
-    <!-- NAVIGATION -->
-    <header class="site-header">
-      <a href="#top" class="logo">DSCVRMI</a>
+    <nav>
+      <a href="works.html">works</a>
+      <a href="about.html">about</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
 
-      <nav aria-label="Main navigation">
-        <a href="works.html">works</a>
-        <a href="about.html">about</a>
-        <a href="#contact">contact</a>
-      </nav>
-    </header>
+  <main>
 
-    <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="archive-label">
+          PERSONAL CREATIVE ARCHIVE / EST. 2026
+        </span>
 
-      <!-- HERO -->
-      <section class="hero">
-        <h1>Hi there :)</h1>
-      </section>
+        <h1>
+          DISCOVER
+          <span>Michelle!</span>
+        </h1>
 
-      <!-- SELECTED WORKS -->
-      <section id="works" class="works-section">
-        <h2>selected works</h2>
+        <p class="hero-description">
+          This is a collection of my creative works,
+          experiments, and little discoveries along the way.
+        </p>
 
-        <div class="works-grid">
+        <a class="handwritten-link" href="#selected-works">
+          find out how <span>↗</span>
+        </a>
+      </div>
 
-          <!-- PROJECT 01:  -->
-          
-          <!-- PROJECT 02: VATERUNSER -->
-          <a href="vaterunser.html" class="project-card">
+      <div class="portrait-scene">
+        <div class="portrait-circle">
 
-            <div class="project-image">
-              <img
-                src="vaterunser thumbnail.png"
-                alt="Film still from Vaterunser"
-                loading="lazy">
-            </div>
+          <!-- REPLACE WITH YOUR ILLUSTRATION -->
+          <!--
+          <img src="assets/hero-illustration.png"
+               alt="Illustration of Michelle">
+          -->
 
-            <span class="project-type">
-              film / short film / 2024
-            </span>
+          <span class="portrait-placeholder">
+            your illustration<br>goes here ✳
+          </span>
+        </div>
+
+        <span class="portrait-caption">
+          fig. 01 — that's me!
+        </span>
+
+        <span class="asterisk">✳</span>
+      </div>
+
+      <span class="hero-bottom-note">
+        AN ONGOING COLLECTION OF THINGS I'VE MADE & LOVED
+      </span>
+    </section>
+
+    <!-- SELECTED WORKS -->
+    <section class="selected" id="selected-works">
+
+      <div class="selected-heading">
+        <div>
+          <span class="section-index">
+            01 / AN INDEX OF MAKING THINGS
+          </span>
+
+          <h2>
+            selected works
+            <span class="scribble-star">✳</span>
+          </h2>
+        </div>
+
+        <span class="section-aside">
+          a few things from the archive ↘
+        </span>
+      </div>
+
+      <div class="green-hill"></div>
+
+      <div class="project-grid">
+
+        <!-- PROJECT 01 -->
+        <a class="project-card" href="works.html">
+          <div class="project-image">
+            <!-- <img src="assets/semesta.jpg" alt="Namamu Pada Semesta"> -->
+            <span class="project-image-placeholder">PROJECT IMAGE 01</span>
+            <span class="project-sticker">01</span>
+          </div>
+
+          <div class="project-info">
+            <p class="project-meta">
+              PUBLICATION / ZINE / 2026
+            </p>
+
+            <h3>Namamu Pada Semesta</h3>
+
+            <p>
+              A little universe made from poems and fragments.
+            </p>
+
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+
+        <!-- PROJECT 02 -->
+        <a class="project-card" href="works.html">
+          <div class="project-image">
+            <!-- <img src="assets/vaterunser.jpg" alt="Vaterunser"> -->
+            <span class="project-image-placeholder">PROJECT IMAGE 02</span>
+            <span class="project-sticker">02</span>
+          </div>
+
+          <div class="project-info">
+            <p class="project-meta">
+              FILM / COLOR GRADING
+            </p>
 
             <h3>Vaterunser</h3>
 
             <p>
-              A campus-set horror short inspired by
-              an urban legend from Jakarta.
+              A short film exploring mood and visual storytelling.
             </p>
 
-          </a>
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
 
-          <!-- PROJECT 03: RED HOUR BLUE HOUR -->
-          <a href="red-hour-blue-hour.html" class="project-card">
+        <!-- PROJECT 03 -->
+        <a class="project-card" href="works.html">
+          <div class="project-image">
+            <!-- <img src="assets/redhour.jpg" alt="Red Hour Blue Hour"> -->
+            <span class="project-image-placeholder">PROJECT IMAGE 03</span>
+            <span class="project-sticker">03</span>
+          </div>
 
-            <div class="project-image">
-              <img
-                src="Front Cover Red Hour Blue Hour.png"
-                alt="Cover of Red Hour Blue Hour"
-                loading="lazy">
-            </div>
-
-            <span class="project-type">
-              publication / experimental zine / 2024
-            </span>
+          <div class="project-info">
+            <p class="project-meta">
+              PUBLICATION / ZINE / 2026
+            </p>
 
             <h3>Red Hour Blue Hour</h3>
 
             <p>
-              Two colours, eleven stories, and more than meets the eye.
+              An experiment in visual rhythm and storytelling.
             </p>
 
-          </a>
-
-        </div>
-        
-<div class="view-all-works">
-  <a href="works.html">view all works →</a>
-</div>
-
-      </section>
-
-      <!-- ABOUT -->
-      <section id="about" class="about-section">
-
-        <h2>about me</h2>
-
-        <div class="about-content">
-
-          <div class="about-image">
-            <img
-              src="michelle.jpg"
-              alt="Portrait of Michelle"
-              loading="lazy">
+            <span class="project-arrow">↗</span>
           </div>
+        </a>
 
-          <div class="about-text">
+      </div>
 
-            <h3>Hi again!</h3>
+      <a class="handwritten-link all-works" href="works.html">
+        view all works <span>⟶</span>
+      </a>
 
-            <p>
-              I'm Michelle, a Multimedia Production student
-              based in Germany, with a particular interest
-              in storytelling and creative experiments.
-            </p>
+    </section>
 
-            <p>
-              I've always been curious about how things
-              come together. One idea might turn into
-              a publication, another into a short film,
-              or even something edible.
-              I enjoy exploring different mediums,
-              experimenting with possibilities, and
-              figuring things out along the way.
-            </p>
+    <!-- ABOUT -->
+    <section class="about-preview" id="about">
 
-            <p>
-              DSCVRMI is my little archive of those explorations.
-              A collection of things I've made, ideas I've pursued,
-              and the occasional rabbit hole I've happily fallen into.
-            </p>
+      <span class="section-index">
+        02 / THE PERSON BEHIND THE PROJECTS
+      </span>
 
-          </div>
+      <h2>about me</h2>
 
-        </div>
-      </section>
+      <span class="about-mark">✳</span>
 
-      <!-- CONTACT -->
-      <section id="contact" class="contact-section">
+      <p>hello again!</p>
 
-        <h2>contact</h2>
+      <p>
+        I'm Michelle — a multimedia maker with a soft spot
+        for stories, little details, and trying new things.
+      </p>
 
-        <p class="contact-heading">
-          let's make something together?
-        </p>
+      <a class="handwritten-link" href="about.html">
+        more about me ↗
+      </a>
+    </section>
 
-        <p class="contact-description">
-          Have an idea, a question, or just want to say hi?
-          My inbox is always open!
-        </p>
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
 
-        <div class="contact-links">
+      <span class="section-index">
+        03 / SAY HELLO
+      </span>
 
-          <a href="mailto:artaastra@gmail.com">
-            &#8599; email me
-          </a>
+      <h2>contact</h2>
 
-        </div>
-      </section>
+      <p>let's make something together?</p>
 
-    </main>
+      <a class="email-button" href="mailto:YOUR_EMAIL@example.com">
+        email me ↗
+      </a>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <span>© 2026 DSCVRMI</span>
-      <a href="#top">↑ BACK TO THE TOP</a>
-    </footer>
+  </main>
 
-  </div>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>© 2026 DSCVRMI</span>
+    <a href="#top">↑ BACK TO THE TOP</a>
+  </footer>
 
 </body>
 </html>
