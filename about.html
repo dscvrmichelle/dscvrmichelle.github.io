@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet">
 
   <style>
 
@@ -246,12 +247,15 @@
     }
 
     .abt-illustration {
-      width: 100%;
-      height: 100%;
-
-      object-fit: contain;
-      display: block;
-    }
+  width: 125%;
+  height: 125%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  display: block;
+}
 
 
     /* =====================================
@@ -438,6 +442,128 @@
       border-bottom-color: currentColor;
     }
 
+    /* =====================================
+   FLOATING FISH DECORATIONS
+===================================== */
+
+.abt-fish-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.abt-fish {
+  position: absolute;
+  display: block;
+  color: var(--abt-paper);
+  font-family: "Noto Sans Egyptian Hieroglyphs", serif;
+  line-height: 1;
+  opacity: 0.65;
+}
+
+/* LEFT SIDE */
+
+.fish-1 {
+  top: 8%;
+  left: 5%;
+  font-size: 55px;
+  transform: rotate(-15deg);
+}
+
+.fish-2 {
+  top: 26%;
+  left: 13%;
+  font-size: 38px;
+  transform: rotate(18deg);
+}
+
+.fish-3 {
+  top: 46%;
+  left: 4%;
+  font-size: 65px;
+  transform: rotate(-8deg);
+}
+
+.fish-4 {
+  top: 69%;
+  left: 12%;
+  font-size: 42px;
+  transform: rotate(25deg);
+}
+
+.fish-5 {
+  top: 87%;
+  left: 5%;
+  font-size: 52px;
+  transform: rotate(-20deg);
+}
+
+/* RIGHT SIDE */
+
+.fish-6 {
+  top: 15%;
+  right: 7%;
+  font-size: 50px;
+  transform: rotate(12deg);
+}
+
+.fish-7 {
+  top: 35%;
+  right: 13%;
+  font-size: 60px;
+  transform: rotate(-18deg);
+}
+
+.fish-8 {
+  top: 54%;
+  right: 5%;
+  font-size: 37px;
+  transform: rotate(20deg);
+}
+
+.fish-9 {
+  top: 74%;
+  right: 12%;
+  font-size: 56px;
+  transform: rotate(-12deg);
+}
+
+.fish-10 {
+  top: 92%;
+  right: 6%;
+  font-size: 43px;
+  transform: rotate(15deg);
+}
+
+/* SMALL SCREENS */
+
+@media (max-width: 900px) {
+  .abt-fish {
+    font-size: 30px;
+    opacity: 0.4;
+  }
+
+  .fish-2,
+  .fish-4,
+  .fish-7,
+  .fish-9 {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .abt-fish {
+    font-size: 24px;
+    opacity: 0.3;
+  }
+
+  .fish-3,
+  .fish-8 {
+    display: none;
+  }
+}
 
     /* =====================================
        FOOTER
@@ -828,6 +954,24 @@
     ===================================== -->
 
     <section class="abt-green-section" id="little-about-me">
+
+      <!-- FLOATING FISH DECORATIONS -->
+
+<div class="abt-fish-decor" aria-hidden="true">
+
+  <span class="abt-fish fish-1">𓆝</span>
+  <span class="abt-fish fish-2">𓆟</span>
+  <span class="abt-fish fish-3">𓆞</span>
+  <span class="abt-fish fish-4">𓆝</span>
+  <span class="abt-fish fish-5">𓆟</span>
+
+  <span class="abt-fish fish-6">𓆞</span>
+  <span class="abt-fish fish-7">𓆝</span>
+  <span class="abt-fish fish-8">𓆟</span>
+  <span class="abt-fish fish-9">𓆞</span>
+  <span class="abt-fish fish-10">𓆝</span>
+
+</div>
 
       <div class="abt-content">
 
