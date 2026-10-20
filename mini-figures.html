@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mini Figures — DSCVRMI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+  <!-- GLOBAL CSS -->
+  <link rel="stylesheet" href="style.css?v=11">
+
+  <!-- MODEL VIEWER -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <!-- PAGE-SPECIFIC CSS -->
+  <style>
+
+    /* ============================
+       PAGE LAYOUT
+    ============================ */
+
+    .mf-page {
+      width: calc(100% - 80px);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 0 90px;
+      box-sizing: border-box;
+    }
+
+    /* ============================
+       PROJECT HEADER
+    ============================ */
+
+    .mf-header {
+      margin-bottom: 40px;
+    }
+
+    .mf-back {
+      display: inline-block;
+      margin-bottom: 50px;
+      color: var(--green, #244B3A);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .mf-back:hover {
+      text-decoration: underline;
+    }
+
+    .mf-category {
+      margin: 0 0 15px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green-accent, #357A4E);
+    }
+
+    .mf-header h1 {
+      margin: 0;
+      font-size: clamp(36px, 4vw, 54px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      font-weight: 700;
+      color: var(--green, #244B3A);
+    }
+
+    .mf-subtitle {
+      max-width: 580px;
+      margin: 18px 0 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #626862;
+    }
+
+    /* ============================
+       INTERACTIVE VIEWER
+    ============================ */
+
+    .mf-viewer-section {
+      margin-bottom: 110px;
+    }
+
+    .mf-viewer-shell {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 18px;
+      background: var(--paper-dark, #E9E1D3);
+      box-sizing: border-box;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 560px;
+      display: block;
+      background: #d9d9d9;
+    }
+
+    .mf-viewer-caption {
+      margin-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .mf-viewer-info h2 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      line-height: 1.3;
+      color: var(--green, #244B3A);
+    }
+
+    .mf-viewer-info p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: #626862;
+      max-width: 520px;
+    }
+
+    .mf-viewer-note {
+      font-size: 12px;
+      line-height: 1.7;
+      color: #7a7f79;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .mf-selector {
+      max-width: 950px;
+      margin: 20px auto 0;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .mf-figure-button {
+      padding: 12px 14px;
+      border: 1px solid var(--green, #244B3A);
+      border-radius: 0;
+      background: transparent;
+      color: var(--green, #244B3A);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .mf-figure-button:hover {
+      background: var(--paper-dark, #E9E1D3);
+    }
+
+    .mf-figure-button.is-active {
+      background: var(--green, #244B3A);
+      color: var(--white, #FFF);
+    }
+
+    .mf-figure-button:focus-visible {
+      outline: 2px solid var(--green-accent, #357A4E);
+      outline-offset: 3px;
+    }
+
+    /* ============================
+       TWO-COLUMN SECTIONS
+    ============================ */
+
+    .mf-section {
+      margin-bottom: 110px;
+    }
+
+    .mf-section-intro {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      align-items: start;
+      margin-bottom: 45px;
+    }
+
+    .mf-section-label {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green-accent, #357A4E);
+    }
+
+    .mf-section-heading h2 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      color: var(--green, #244B3A);
+    }
+
+    .mf-section-text {
+      max-width: 590px;
+    }
+
+    .mf-section-text p {
+      margin: 0 0 22px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--ink, #222);
+    }
+
+    .mf-section-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .mf-about .mf-section-text p:first-child {
+      font-weight: 600;
+      color: var(--green, #244B3A);
+    }
+
+    /* ============================
+       COLLECTION IMAGE
+    ============================ */
+
+    .mf-overview {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .mf-overview-frame {
+      padding: 16px;
+      background: var(--paper-dark, #E9E1D3);
+    }
+
+    .mf-overview-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .mf-overview figcaption {
+      margin-top: 14px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--green, #244B3A);
+    }
+
+    /* ============================
+       PROJECT INFO
+    ============================ */
+
+    .mf-info {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      margin-top: 20px;
+    }
+
+    .mf-info-content {
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(36, 75, 58, 0.2);
+    }
+
+    .mf-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .mf-info-item:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .mf-info-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green-accent, #357A4E);
+    }
+
+    .mf-info-value {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--ink, #222);
+    }
+
+    /* ============================
+       BOTTOM NAVIGATION
+    ============================ */
+
+    .mf-bottom-navigation {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 25px;
+      border-top: 1px solid rgba(36, 75, 58, 0.25);
+    }
+
+    .mf-bottom-navigation a {
+      color: var(--green, #244B3A);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .mf-bottom-navigation a:hover {
+      text-decoration: underline;
+    }
+
+    /* ============================
+       TABLET
+    ============================ */
+
+    @media (max-width: 768px) {
+
+      .mf-page {
+        width: calc(100% - 40px);
+        padding: 40px 0 65px;
+      }
+
+      .mf-header {
+        margin-bottom: 35px;
+      }
+
+      .mf-back {
+        margin-bottom: 45px;
+      }
+
+      .mf-header h1 {
+        font-size: clamp(32px, 7vw, 44px);
+        letter-spacing: -1px;
+      }
+
+      model-viewer {
+        height: 440px;
+      }
+
+      .mf-selector {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mf-section {
+        margin-bottom: 80px;
+      }
+
+      .mf-section-intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 35px;
+      }
+
+      .mf-info {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .mf-info-content {
+        grid-column: 1;
+      }
+
+      .mf-viewer-caption {
+        flex-direction: column;
+      }
+
+      .mf-viewer-note {
+        text-align: left;
+        white-space: normal;
+      }
+    }
+
+    /* ============================
+       MOBILE
+    ============================ */
+
+    @media (max-width: 480px) {
+
+      .mf-category {
+        letter-spacing: 1.2px;
+        line-height: 1.7;
+      }
+
+      .mf-viewer-shell,
+      .mf-overview-frame {
+        padding: 10px;
+      }
+
+      model-viewer {
+        height: 320px;
+      }
+
+      .mf-selector {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .mf-figure-button {
+        font-size: 12px;
+        padding: 10px 12px;
+      }
+
+      .mf-info-content {
+        gap: 18px;
+      }
+    }
+
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      DSCVRMI<span class="brand-dot">.</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="works.html">works</a>
+      <a href="about.html">about</a>
+      <a href="index.html#contact">contact</a>
+    </nav>
+  </header>
+
+  <main class="mf-page">
+
+    <!-- PROJECT HEADER -->
+    <section class="mf-header">
+
+      <a href="works.html" class="mf-back">
+        ← back to works
+      </a>
+
+      <p class="mf-category">
+        3D MODELLING / CHARACTER DESIGN / 2024
+      </p>
+
+      <h1>Mini Figures</h1>
+
+      <p class="mf-subtitle">
+        A collection of personalised 3D mini characters
+        created in Womp for an Instagram post by PPI Kiel.
+      </p>
+
+    </section>
+
+    <!-- INTERACTIVE VIEWER -->
+    <section class="mf-viewer-section">
+
+      <div class="mf-viewer-shell">
+
+        <model-viewer
+          id="miniFigureViewer"
+          src="models/mini-figures/mako.glb"
+          alt="Interactive 3D model of the mini figure Mako"
+          camera-controls
+          touch-action="pan-y"
+          shadow-intensity="1"
+          environment-image="neutral"
+          exposure="1"
+          auto-rotate
+          auto-rotate-delay="0"
+          rotation-per-second="20deg"
+          interaction-prompt="auto">
+        </model-viewer>
+
+      </div>
+
+      <div class="mf-viewer-caption">
+        <div class="mf-viewer-info">
+          <h2 id="figureTitle">mako</h2>
+          <p id="figureDescription">
+            One of the personalised mini figures from the collection.
+          </p>
+        </div>
+
+        <div class="mf-viewer-note">
+          drag to rotate<br>
+          scroll to zoom
+        </div>
+      </div>
+
+      <div class="mf-selector" id="figureSelector">
+        <button class="mf-figure-button is-active" data-model="models/mini-figures/mako.glb" data-title="mako" data-description="One of the personalised mini figures from the collection." type="button">mako</button>
+        <button class="mf-figure-button" data-model="models/mini-figures/tamako.glb" data-title="tamako" data-description="A mini figure designed as part of the same character set for PPI Kiel." type="button">tamako</button>
+        <button class="mf-figure-button" data-model="models/mini-figures/zeko.glb" data-title="zeko" data-description="A personalised character built from real-life reference into the shared visual style." type="button">zeko</button>
+        <button class="mf-figure-button" data-model="models/mini-figures/jiko.glb" data-title="jiko" data-description="A stylised figure with the same toy-like proportions used throughout the set." type="button">jiko</button>
+        <button class="mf-figure-button" data-model="models/mini-figures/sako.glb" data-title="sako" data-description="Part of the eight-character collection created during this first Womp experiment." type="button">sako</button>
+        <button class="mf-figure-button" data-model="models/mini-figures/keko.glb" data-title="keko" data-description="A mini figure translated from photo reference into a simplified 3D form." type="button">keko</button>
+        <button class="mf-figure-button" data-model="models/mini-figures/daniko.glb" data-title="daniko" data-description="A character designed to stay recognisable while matching the collection's overall style." type="button">daniko</button>
+        <button class="mf-figure-button" data-model="models/mini-figures/ako.glb" data-title="ako" data-description="One of the final mini figures from the complete PPI Kiel set." type="button">ako</button>
+      </div>
+
+    </section>
+
+    <!-- ABOUT THE PROJECT -->
+    <section class="mf-section mf-about">
+
+      <div class="mf-section-intro">
+
+        <div class="mf-section-heading">
+          <span class="mf-section-label">
+            01 / THE PROJECT
+          </span>
+          <h2>about the project</h2>
+        </div>
+
+        <div class="mf-section-text">
+
+          <p>
+            Mini Figures started as my first experiment with Womp,
+            a browser-based 3D modelling tool.
+            I created a collection of eight personalised characters
+            based on real-life photo references for an Instagram post
+            by PPI Kiel.
+          </p>
+
+          <p>
+            I wanted each figure to feel like part of the same
+            collection while still having its own personality.
+            So I kept their proportions and overall style consistent,
+            then explored details like hairstyles, glasses,
+            clothing, and colours to make each character recognisable.
+          </p>
+
+          <p>
+            Since I was completely new to Womp at the time,
+            a lot of the process involved figuring things out
+            as I went.
+            What started as an opportunity to try something new
+            eventually became a complete set of little characters.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT INFO -->
+      <div class="mf-info">
+        <div class="mf-info-content">
+
+          <div class="mf-info-item">
+            <span class="mf-info-label">occasion</span>
+            <span class="mf-info-value">PPI Kiel Instagram post</span>
+          </div>
+
+          <div class="mf-info-item">
+            <span class="mf-info-label">year</span>
+            <span class="mf-info-value">2024</span>
+          </div>
+
+          <div class="mf-info-item">
+            <span class="mf-info-label">type</span>
+            <span class="mf-info-value">3D render / character experiment</span>
+          </div>
+
+          <div class="mf-info-item">
+            <span class="mf-info-label">tools</span>
+            <span class="mf-info-value">Womp</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FULL COLLECTION -->
+    <section class="mf-section">
+
+      <div class="mf-section-intro">
+
+        <div class="mf-section-heading">
+          <span class="mf-section-label">
+            02 / THE COLLECTION
+          </span>
+          <h2>full character set</h2>
+        </div>
+
+        <div class="mf-section-text">
+          <p>
+            The final output brought all eight characters together
+            in one visual set.
+            Even though each figure was customised individually,
+            the shared proportions and glossy toy-like finish helped
+            unify them as a collection.
+          </p>
+        </div>
+
+      </div>
+
+      <figure class="mf-overview">
+        <div class="mf-overview-frame">
+          <img
+            src="mini-figures-overview.png"
+            alt="Overview image showing all eight mini figures created for PPI Kiel"
+            loading="lazy">
+        </div>
+
+        <figcaption>
+          Final overview image featuring the complete mini-figure collection.
+        </figcaption>
+      </figure>
+
+    </section>
+
+    <!-- BACK TO WORKS -->
+    <div class="mf-bottom-navigation">
+      <a href="works.html">← explore more works</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>© 2026 DSCVRMI</span>
+    <a href="#top">↑ BACK TO THE TOP</a>
+  </footer>
+
+  <!-- VIEWER SCRIPT -->
+  <script>
+    const viewer = document.getElementById('miniFigureViewer');
+    const figureTitle = document.getElementById('figureTitle');
+    const figureDescription = document.getElementById('figureDescription');
+    const figureButtons = document.querySelectorAll('.mf-figure-button');
+
+    figureButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        figureButtons.forEach(btn => btn.classList.remove('is-active'));
+        button.classList.add('is-active');
+
+        const modelPath = button.dataset.model;
+        const title = button.dataset.title;
+        const description = button.dataset.description;
+
+        viewer.src = modelPath;
+        viewer.alt = `Interactive 3D model of the mini figure ${title}`;
+        figureTitle.textContent = title;
+        figureDescription.textContent = description;
+      });
+    });
+  </script>
+
+</body>
+</html>
