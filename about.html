@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================
-       ABOUT PAGE ONLY
-    ========================= */
+
+    /* =====================================
+       COLORS & BASE
+    ===================================== */
 
     :root {
       --abt-paper: #F5F0E6;
@@ -37,18 +40,23 @@
       background: var(--abt-paper);
       color: var(--abt-ink);
       font-family: "Inter", sans-serif;
+      overflow-x: hidden;
     }
 
     a {
       color: inherit;
     }
 
-    /* NAVIGATION */
+
+    /* =====================================
+       NAVIGATION
+    ===================================== */
 
     .abt-header {
       height: 76px;
       padding: 0 7%;
       background: var(--abt-paper-dark);
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -78,92 +86,112 @@
       opacity: 0.6;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+
+    /* =====================================
+       ABOUT HERO
+    ===================================== */
 
     .abt-hero {
       position: relative;
       width: 100%;
-      max-width: 1200px;
-      min-height: 660px;
+      max-width: 1300px;
+      height: 730px;
       margin: 0 auto;
-      padding: 45px 5% 90px;
+      padding: 45px 5%;
     }
+
+    /* TITLE */
 
     .abt-title-area {
       position: relative;
-      height: 175px;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
     }
 
     .abt-title {
-      position: absolute;
       margin: 0;
       font-family: "Nanum Pen Script", cursive;
       font-weight: 400;
-      font-size: clamp(85px, 9vw, 130px);
-      line-height: 0.9;
+      font-size: clamp(76px, 8.5vw, 125px);
+      line-height: 1;
       color: var(--abt-green);
       white-space: nowrap;
     }
 
-    .abt-title-first {
-      top: 0;
-      left: 0;
-    }
 
-    .abt-title-second {
-      top: 72px;
-      right: 5%;
-    }
-
-    /* PHOTO + NICKNAMES */
+    /* =====================================
+       COLLAGE
+    ===================================== */
 
     .abt-collage {
       position: relative;
-      height: 335px;
-      max-width: 950px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 1080px;
+      height: 530px;
+      margin: 5px auto 0;
     }
+
+
+    /* PHOTO */
 
     .abt-photo-frame {
       position: absolute;
-      left: 3%;
-      top: 10px;
+      left: 4%;
+      top: 48px;
+
       width: 255px;
       height: 310px;
-      transform: rotate(-15deg);
+
       background: #d9d9d9;
+      transform: rotate(-15deg);
       overflow: hidden;
+
+      z-index: 2;
     }
 
     .abt-photo {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
       object-position: center 30%;
       display: block;
     }
 
-    /* NICKNAME CLUSTER */
+
+    /* =====================================
+       NICKNAME STICKY NOTES
+    ===================================== */
 
     .abt-names {
       position: absolute;
-      left: 44%;
-      top: 25px;
-      width: 420px;
-      height: 270px;
+
+      right: 4%;
+      top: 50px;
+
+      width: 410px;
+      height: 250px;
+
+      z-index: 3;
     }
 
     .abt-tag {
       position: absolute;
+      display: inline-block;
+
       background: var(--abt-paper-dark);
-      padding: 3px 14px 5px;
+      padding: 4px 15px 6px;
+
       color: var(--abt-green);
+
       font-family: "Nanum Pen Script", cursive;
       font-size: 43px;
       line-height: 1;
+
       white-space: nowrap;
+
+      transition: transform 0.2s ease;
     }
 
     .abt-michelle {
@@ -173,73 +201,169 @@
     }
 
     .abt-elle {
-      right: 15px;
-      top: 26px;
+      right: 20px;
+      top: 28px;
       transform: rotate(12deg);
     }
 
     .abt-maikel {
-      left: 65px;
+      left: 55px;
       top: 140px;
       transform: rotate(13deg);
     }
 
     .abt-kel {
       right: 0;
-      top: 155px;
+      top: 150px;
       transform: rotate(-14deg);
     }
 
-    /* FIND OUT */
 
-    .abt-discover {
+    /* =====================================
+       ILLUSTRATION CIRCLE
+    ===================================== */
+
+    .abt-illustration-circle {
       position: absolute;
-      bottom: 40px;
+
       left: 50%;
+      bottom: 0;
+
       transform: translateX(-50%);
-      color: var(--abt-green);
+
+      width: 265px;
+      height: 265px;
+
+      border-radius: 50%;
+      background: var(--abt-paper-dark);
+
+      overflow: hidden;
+      z-index: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .abt-illustration {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+      display: block;
+    }
+
+
+    /* =====================================
+       DECORATIVE ASTERISKS
+    ===================================== */
+
+    .abt-star {
+      position: absolute;
+      display: block;
+
       font-family: "Nanum Pen Script", cursive;
-      font-size: 34px;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: opacity 0.2s ease;
+      font-weight: 400;
+
+      color: var(--abt-green);
+      line-height: 1;
+
+      pointer-events: none;
+      user-select: none;
+
+      z-index: 4;
     }
 
-    .abt-discover:hover {
-      opacity: 0.6;
+    .abt-star-one {
+      top: 175px;
+      left: 3%;
+      font-size: 48px;
+      transform: rotate(-15deg);
     }
 
-    /* =========================
-       GREEN ARCH
-    ========================= */
+    .abt-star-two {
+      top: 215px;
+      right: 3%;
+      font-size: 38px;
+      transform: rotate(18deg);
+    }
+
+    .abt-star-three {
+      top: 405px;
+      left: 34%;
+      font-size: 37px;
+      transform: rotate(12deg);
+    }
+
+    .abt-star-four {
+      top: 475px;
+      right: 7%;
+      font-size: 50px;
+      transform: rotate(-18deg);
+    }
+
+    .abt-star-five {
+      top: 600px;
+      left: 12%;
+      font-size: 32px;
+      transform: rotate(15deg);
+    }
+
+    .abt-star-six {
+      top: 130px;
+      right: 16%;
+      font-size: 25px;
+      transform: rotate(20deg);
+    }
+
+
+    /* =====================================
+       GREEN ARCH SECTION
+    ===================================== */
 
     .abt-green-section {
       position: relative;
       isolation: isolate;
+
+      width: 100%;
       background: var(--abt-sage);
-      padding: 85px 24px 110px;
-      margin-top: 75px;
+
+      margin-top: 85px;
+      padding: 105px 24px 110px;
     }
 
     .abt-green-section::before {
       content: "";
       position: absolute;
-      z-index: -1;
-      top: -110px;
+
+      top: -115px;
       left: 0;
+
       width: 100%;
-      height: 180px;
+      height: 190px;
+
       background: var(--abt-sage);
+
       border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+      z-index: -1;
     }
 
     .abt-content {
+      position: relative;
+      z-index: 1;
+
       width: min(680px, 100%);
       margin: 0 auto;
     }
 
+
+    /* =====================================
+       ABOUT CONTENT
+    ===================================== */
+
     .abt-block {
-      margin-bottom: 60px;
+      margin-bottom: 65px;
     }
 
     .abt-block:last-child {
@@ -250,8 +374,10 @@
       font-family: "Nanum Pen Script", cursive;
       font-size: 43px;
       font-weight: 400;
+
       color: white;
       text-align: center;
+
       line-height: 1;
       margin: 0 0 28px;
     }
@@ -262,11 +388,15 @@
       margin: 0 0 15px;
     }
 
-    /* TOOLS */
+
+    /* =====================================
+       TOOLS
+    ===================================== */
 
     .abt-tools {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 45px;
       max-width: 420px;
       margin: 0 auto;
@@ -275,11 +405,15 @@
     .abt-tools ul {
       margin: 0;
       padding-left: 22px;
+
       font-size: 15px;
       line-height: 1.6;
     }
 
-    /* SOCIALS */
+
+    /* =====================================
+       SOCIAL LINKS
+    ===================================== */
 
     .abt-socials {
       display: flex;
@@ -291,22 +425,35 @@
     .abt-socials a {
       text-decoration: none;
       font-size: 15px;
+
       border-bottom: 1px solid transparent;
+
+      transition:
+        opacity 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .abt-socials a:hover {
+      opacity: 0.7;
       border-bottom-color: currentColor;
     }
 
-    /* FOOTER */
+
+    /* =====================================
+       FOOTER
+    ===================================== */
 
     .abt-footer {
       padding: 24px 7%;
+
       background: var(--abt-paper-dark);
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       gap: 20px;
+
       color: var(--abt-green);
       font-size: 19px;
     }
@@ -315,48 +462,81 @@
       text-decoration: none;
     }
 
-    /* =========================
+
+    /* =====================================
        TABLET
-    ========================= */
+    ===================================== */
 
     @media (max-width: 900px) {
 
-      .abt-title {
-        font-size: clamp(76px, 12vw, 110px);
+      .abt-hero {
+        height: 765px;
+        padding: 45px 4%;
       }
 
-      .abt-title-second {
-        right: 0;
-        top: 85px;
+      .abt-title {
+        font-size: clamp(62px, 10vw, 100px);
+      }
+
+      .abt-collage {
+        height: 560px;
       }
 
       .abt-photo-frame {
         left: 5%;
+        top: 65px;
+
         width: 220px;
-        height: 285px;
+        height: 275px;
       }
 
       .abt-names {
-        left: 43%;
-        width: 330px;
+        right: 3%;
+        top: 70px;
+
+        width: 310px;
+        height: 230px;
       }
 
       .abt-tag {
-        font-size: 37px;
+        font-size: 36px;
       }
 
       .abt-maikel {
-        left: 35px;
+        left: 30px;
       }
 
       .abt-elle {
         right: 0;
       }
+
+      .abt-illustration-circle {
+        width: 230px;
+        height: 230px;
+        bottom: 5px;
+      }
+
+      .abt-star-one {
+        left: 2%;
+      }
+
+      .abt-star-three {
+        left: 38%;
+      }
+
+      .abt-star-four {
+        right: 3%;
+      }
+
+      .abt-green-section {
+        margin-top: 75px;
+      }
     }
 
-    /* =========================
+
+    /* =====================================
        MOBILE
-    ========================= */
+    ===================================== */
 
     @media (max-width: 600px) {
 
@@ -364,7 +544,7 @@
         height: auto;
         min-height: 75px;
         padding: 18px 20px;
-        gap: 15px;
+        gap: 12px;
       }
 
       .abt-logo {
@@ -380,50 +560,48 @@
       }
 
       .abt-hero {
-        min-height: 760px;
-        padding: 35px 20px 90px;
-      }
-
-      .abt-title-area {
-        height: 190px;
+        height: 880px;
+        padding: 38px 20px 70px;
       }
 
       .abt-title {
-        font-size: clamp(65px, 16vw, 95px);
-      }
-
-      .abt-title-first {
-        top: 0;
-      }
-
-      .abt-title-second {
-        top: 95px;
-        right: 0;
+        font-size: clamp(42px, 12vw, 75px);
+        white-space: nowrap;
       }
 
       .abt-collage {
-        height: 440px;
+        height: 710px;
+        margin-top: 20px;
       }
+
+      /* PHOTO */
 
       .abt-photo-frame {
         left: 50%;
-        top: 10px;
+        top: 18px;
+
         width: 195px;
         height: 240px;
+
         transform: translateX(-50%) rotate(-12deg);
       }
 
+      /* NAMES */
+
       .abt-names {
         left: 50%;
-        top: 280px;
-        width: min(340px, 100%);
-        height: 145px;
+        right: auto;
+        top: 315px;
+
         transform: translateX(-50%);
+
+        width: min(320px, 100%);
+        height: 155px;
       }
 
       .abt-tag {
         font-size: 32px;
-        padding: 3px 10px;
+        padding: 3px 10px 5px;
       }
 
       .abt-michelle {
@@ -437,29 +615,75 @@
       }
 
       .abt-maikel {
-        left: 15%;
-        top: 78px;
+        left: 14%;
+        top: 80px;
       }
 
       .abt-kel {
-        right: 4%;
-        top: 85px;
+        right: 5%;
+        top: 90px;
       }
 
-      .abt-discover {
-        bottom: 25px;
+      /* ILLUSTRATION */
+
+      .abt-illustration-circle {
+        width: 200px;
+        height: 200px;
+
+        bottom: 10px;
+      }
+
+      /* STARS */
+
+      .abt-star-one {
+        top: 160px;
+        left: 6%;
+        font-size: 35px;
+      }
+
+      .abt-star-two {
+        top: 245px;
+        right: 6%;
         font-size: 30px;
       }
 
+      .abt-star-three {
+        top: 445px;
+        left: 7%;
+        font-size: 29px;
+      }
+
+      .abt-star-four {
+        top: 575px;
+        right: 6%;
+        font-size: 34px;
+      }
+
+      .abt-star-five {
+        top: 690px;
+        left: 7%;
+        font-size: 29px;
+      }
+
+      .abt-star-six {
+        top: 105px;
+        right: 8%;
+        font-size: 23px;
+      }
+
+      /* GREEN SECTION */
+
       .abt-green-section {
         margin-top: 65px;
-        padding: 60px 24px 85px;
+        padding: 75px 24px 85px;
       }
 
       .abt-green-section::before {
-        top: -65px;
-        height: 105px;
+        top: -70px;
+        height: 115px;
       }
+
+      /* CONTENT */
 
       .abt-block {
         margin-bottom: 50px;
@@ -481,40 +705,89 @@
         font-size: 13px;
       }
 
+      .abt-socials {
+        gap: 14px;
+      }
+
+      .abt-socials a {
+        font-size: 13px;
+      }
+
       .abt-footer {
         padding: 22px;
         font-size: 13px;
       }
     }
+
+    @media (max-width: 380px) {
+      .abt-nav {
+        gap: 9px;
+      }
+
+      .abt-logo {
+        font-size: 15px;
+      }
+
+      .abt-nav a {
+        font-size: 12px;
+      }
+    }
+
   </style>
 </head>
 
+
 <body id="top">
 
-  <!-- NAVIGATION -->
+  <!-- =====================================
+       NAVIGATION
+  ===================================== -->
 
   <header class="abt-header">
-    <a href="index.html" class="abt-logo">DSCVRMI</a>
+
+    <a href="index.html" class="abt-logo">
+      DSCVRMI
+    </a>
 
     <nav class="abt-nav">
       <a href="works.html">works</a>
       <a href="about.html" aria-current="page">about</a>
       <a href="contact.html">contact</a>
     </nav>
+
   </header>
+
 
   <main>
 
-    <!-- HERO -->
+    <!-- =====================================
+         HERO
+    ===================================== -->
 
     <section class="abt-hero">
 
+      <!-- ASTERISK DECORATIONS -->
+
+      <span class="abt-star abt-star-one" aria-hidden="true">*</span>
+      <span class="abt-star abt-star-two" aria-hidden="true">*</span>
+      <span class="abt-star abt-star-three" aria-hidden="true">*</span>
+      <span class="abt-star abt-star-four" aria-hidden="true">*</span>
+      <span class="abt-star abt-star-five" aria-hidden="true">*</span>
+      <span class="abt-star abt-star-six" aria-hidden="true">*</span>
+
+
+      <!-- TITLE -->
+
       <div class="abt-title-area">
-        <h1 class="abt-title abt-title-first">you can</h1>
-        <h2 class="abt-title abt-title-second">call me</h2>
+        <h1 class="abt-title">you can call me</h1>
       </div>
 
+
+      <!-- COLLAGE -->
+
       <div class="abt-collage">
+
+        <!-- PHOTO -->
 
         <div class="abt-photo-frame">
           <img
@@ -524,6 +797,9 @@
           >
         </div>
 
+
+        <!-- NICKNAMES -->
+
         <div class="abt-names">
           <span class="abt-tag abt-michelle">michelle</span>
           <span class="abt-tag abt-elle">elle</span>
@@ -531,17 +807,35 @@
           <span class="abt-tag abt-kel">kel</span>
         </div>
 
+
+        <!-- ILLUSTRATION CIRCLE -->
+
+        <div class="abt-illustration-circle">
+          <img
+            class="abt-illustration"
+            src="hero-illustration.png"
+            alt="Illustration of Michelle"
+          >
+        </div>
+
       </div>
 
     </section>
 
-    <!-- GREEN CONTENT -->
+
+    <!-- =====================================
+         GREEN ABOUT SECTION
+    ===================================== -->
 
     <section class="abt-green-section" id="little-about-me">
 
       <div class="abt-content">
 
+
+        <!-- LITTLE ABOUT ME -->
+
         <section class="abt-block">
+
           <h2>little about me</h2>
 
           <p>
@@ -556,9 +850,14 @@
             different mediums and figuring out which one works best
             for the idea I'm trying to communicate.
           </p>
+
         </section>
 
+
+        <!-- HOW I APPROACH THINGS -->
+
         <section class="abt-block">
+
           <h2>how i approach things</h2>
 
           <p>
@@ -572,9 +871,14 @@
             and developing concepts before deciding what the final
             outcome should look like.
           </p>
+
         </section>
 
+
+        <!-- STUFF THAT I USE -->
+
         <section class="abt-block">
+
           <h2>stuff that i use</h2>
 
           <div class="abt-tools">
@@ -598,28 +902,48 @@
             </ul>
 
           </div>
+
         </section>
 
+
+        <!-- FIND ME ELSEWHERE -->
+
         <section class="abt-block">
+
           <h2>find me elsewhere</h2>
 
           <div class="abt-socials">
-            <a href="https://www.linkedin.com/in/michelle-artalim-069a4229b/" target="_blank" rel="noopener noreferrer">
+
+            <a
+              href="https://www.linkedin.com/in/michelle-artalim-069a4229b/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               &#8599; linkedin
             </a>
 
-            <a href="https://www.instagram.com/37maikel/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/37maikel/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               &#8599; instagram
             </a>
 
-            <a href="https://wednesdayelle.blogspot.com/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://wednesdayelle.blogspot.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               &#8599; poetry blog
             </a>
 
             <a href="mailto:artaastra@gmail.com">
               &#8599; email
             </a>
+
           </div>
+
         </section>
 
       </div>
@@ -628,12 +952,19 @@
 
   </main>
 
-  <!-- FOOTER -->
+
+  <!-- =====================================
+       FOOTER
+  ===================================== -->
 
   <footer class="abt-footer">
+
     <span>© 2026 DSCVRMI</span>
 
-    <a href="#top">↑ BACK TO THE TOP</a>
+    <a href="#top">
+      ↑ BACK TO THE TOP
+    </a>
+
   </footer>
 
 </body>
