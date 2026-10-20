@@ -166,7 +166,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 22px;
       padding-top: 25px;
-      border-top: 1px solid rgba(36,75,58,0.2);
+      border-top: 1px solid rgba(36, 75, 58, 0.2);
     }
 
     .nus-info-item {
@@ -194,6 +194,21 @@
     }
 
     /* ============================
+       SHARED IMAGE FRAMES
+    ============================ */
+
+    .nus-image-frame {
+      padding: 14px;
+      background: var(--paper-dark, #E9E1D3);
+    }
+
+    .nus-image-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ============================
        GRAPHIC DESIGN
     ============================ */
 
@@ -215,18 +230,36 @@
       margin: 0;
     }
 
-    .nus-image-frame {
-      padding: 14px;
-      background: var(--paper-dark, #E9E1D3);
-    }
-
-    .nus-image-frame img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
     .nus-design-card figcaption {
+      margin-top: 14px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--green, #244B3A);
+    }
+
+    /* ============================
+       PHOTOBOOTH
+    ============================ */
+
+    .nus-photobooth-gallery {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .nus-photobooth-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+      align-items: start;
+    }
+
+    .nus-photobooth-card {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .nus-photobooth-card figcaption {
       margin-top: 14px;
       font-size: 12px;
       line-height: 1.7;
@@ -301,7 +334,6 @@
 
     /* ============================
        EVENT PHOTOGRAPHY SLIDER
-       TWO PHOTOS ON DESKTOP
     ============================ */
 
     .nus-photo-slider {
@@ -421,7 +453,7 @@
       justify-content: flex-start;
       align-items: center;
       padding-top: 25px;
-      border-top: 1px solid rgba(36,75,58,0.25);
+      border-top: 1px solid rgba(36, 75, 58, 0.25);
     }
 
     .nus-bottom-navigation a {
@@ -493,11 +525,9 @@
     ============================ */
 
     @media (max-width: 600px) {
-
       .nus-photo-slide {
         flex-basis: 100%;
       }
-
     }
 
     @media (max-width: 480px) {
@@ -511,7 +541,8 @@
         padding: 8px;
       }
 
-      .nus-design-grid {
+      .nus-design-grid,
+      .nus-photobooth-grid {
         grid-template-columns: 1fr;
         gap: 28px;
       }
@@ -589,7 +620,10 @@
       </div>
     </section>
 
-    <!-- ABOUT THE EVENT -->
+    <!-- ============================
+         01 — ABOUT THE EVENT
+    ============================ -->
+
     <section class="nus-section nus-about">
 
       <div class="nus-section-intro">
@@ -653,6 +687,7 @@
             <span class="nus-info-label">my roles</span>
             <span class="nus-info-value">
               Graphic Design · Motion Graphics<br>
+              Photobooth Concept &amp; Setup<br>
               Photography · Videography · Editing
             </span>
           </div>
@@ -662,7 +697,10 @@
 
     </section>
 
-    <!-- VISUAL IDENTITY -->
+    <!-- ============================
+         02 — VISUAL IDENTITY
+    ============================ -->
+
     <section class="nus-section">
 
       <div class="nus-section-intro">
@@ -734,15 +772,110 @@
 
     </section>
 
-    <!-- PROMOTIONAL MOTION & VIDEO -->
+    <!-- ============================
+         03 — PHOTOBOOTH
+    ============================ -->
+
     <section class="nus-section">
 
       <div class="nus-section-intro">
 
         <div class="nus-section-heading">
           <span class="nus-section-label">
-            03 / DIGITAL PROMOTION
+            03 / SPATIAL DESIGN
           </span>
+
+          <h2>photobooth concept &amp; execution</h2>
+        </div>
+
+        <div class="nus-section-text">
+
+          <p>
+            In addition to the event's visual materials,
+            I developed the initial concept sketch for
+            the NUSWANTARA photobooth.
+            The idea drew from a Rumah Belanda /
+            Java-inspired setting, combining batik textiles,
+            draped fabrics, greenery, lighting, and
+            vintage-style props to create a warm,
+            atmospheric backdrop.
+          </p>
+
+          <p>
+            I worked together with another team member
+            to translate the concept into a physical
+            installation for the event.
+            I also created three paintings on canvas
+            that were incorporated into the setup
+            as decorative elements.
+          </p>
+
+          <p>
+            During the event, I worked as one of the
+            photobooth attendants, assisting guests
+            and operating the photobooth.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- PHOTOBOOTH GALLERY -->
+      <div class="nus-photobooth-gallery">
+
+        <div class="nus-photobooth-grid">
+
+          <!-- CONCEPT SKETCH -->
+          <figure class="nus-photobooth-card">
+
+            <div class="nus-image-frame">
+              <img
+                src="nuswantara-photobooth-sketch.png"
+                alt="Initial concept sketch of the NUSWANTARA standing photobooth"
+                loading="lazy">
+            </div>
+
+            <figcaption>
+              Initial concept sketch
+            </figcaption>
+
+          </figure>
+
+          <!-- FINAL SETUP -->
+          <figure class="nus-photobooth-card">
+
+            <div class="nus-image-frame">
+              <img
+                src="nuswantara-photobooth-final.jpg"
+                alt="Final NUSWANTARA photobooth with batik backdrop, draped fabrics, paintings, and vintage props"
+                loading="lazy">
+            </div>
+
+            <figcaption>
+              Final photobooth setup
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================
+         04 — PROMOTIONAL VIDEO
+    ============================ -->
+
+    <section class="nus-section">
+
+      <div class="nus-section-intro">
+
+        <div class="nus-section-heading">
+          <span class="nus-section-label">
+            04 / DIGITAL PROMOTION
+          </span>
+
           <h2>promotional motion &amp; video</h2>
         </div>
 
@@ -829,15 +962,19 @@
 
     </section>
 
-    <!-- EVENT PHOTOGRAPHY -->
+    <!-- ============================
+         05 — EVENT PHOTOGRAPHY
+    ============================ -->
+
     <section class="nus-section">
 
       <div class="nus-section-intro">
 
         <div class="nus-section-heading">
           <span class="nus-section-label">
-            04 / DOCUMENTATION
+            05 / DOCUMENTATION
           </span>
+
           <h2>event photography</h2>
         </div>
 
@@ -946,19 +1083,24 @@
 
     </section>
 
-    <!-- AFTERMOVIE -->
+    <!-- ============================
+         06 — AFTERMOVIE
+    ============================ -->
+
     <section class="nus-section">
 
       <div class="nus-section-intro">
 
         <div class="nus-section-heading">
           <span class="nus-section-label">
-            05 / THE AFTERMOVIE
+            06 / THE AFTERMOVIE
           </span>
+
           <h2>videography &amp; aftermovie</h2>
         </div>
 
         <div class="nus-section-text">
+
           <p>
             Beyond photography, I documented the event
             through video and edited the final aftermovie.
@@ -967,6 +1109,7 @@
             preserving the atmosphere of NUSWANTARA
             beyond the evening itself.
           </p>
+
         </div>
 
       </div>
@@ -1015,7 +1158,10 @@
     <a href="#top">↑ BACK TO THE TOP</a>
   </footer>
 
-  <!-- PHOTO SLIDER SCRIPT -->
+  <!-- ============================
+       PHOTO SLIDER SCRIPT
+  ============================ -->
+
   <script>
 
     const track = document.getElementById('nusPhotoTrack');
@@ -1037,6 +1183,7 @@
     }
 
     function updateSlider(smooth = true) {
+
       const count = visibleCount();
       const maxIndex = Math.max(0, slides.length - count);
 
@@ -1044,11 +1191,15 @@
 
       const target = slides[current];
 
+      const reducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
       track.scrollTo({
         left: target.offsetLeft - slides[0].offsetLeft,
-        behavior: smooth && !window.matchMedia(
-          '(prefers-reduced-motion: reduce)'
-        ).matches ? 'smooth' : 'instant'
+        behavior: smooth && !reducedMotion
+          ? 'smooth'
+          : 'instant'
       });
 
       const start = String(current + 1).padStart(2, '0');
